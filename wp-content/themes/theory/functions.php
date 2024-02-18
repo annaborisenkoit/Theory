@@ -7,6 +7,23 @@
  * @package Theory
  */
 
+function theo_enqueue_scripts(){
+	//если надо и зарегистрировать и вывести скрипты и стили:	
+	wp_enqueue_style('theo-general', get_template_directory_uri().'/assets/css/general.css', array(), '1.0', 'all');
+
+    wp_enqueue_script('theo-script', get_template_directory_uri().'/assets/js/script.js', array('jquery'), '1.0', true);
+	//4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+	
+}
+add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
+
+
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -138,14 +155,7 @@ add_action( 'widgets_init', 'theory_widgets_init' );
  * Enqueue scripts and styles.
  */
 function theory_scripts() {
-	wp_enqueue_style( 'theory-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'theory-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'theory-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	
 }
 add_action( 'wp_enqueue_scripts', 'theory_scripts' );
 
