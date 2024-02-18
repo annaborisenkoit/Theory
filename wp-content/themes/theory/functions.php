@@ -152,14 +152,6 @@ function theory_widgets_init() {
 add_action( 'widgets_init', 'theory_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
- */
-function theory_scripts() {
-	
-}
-add_action( 'wp_enqueue_scripts', 'theory_scripts' );
-
-/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
