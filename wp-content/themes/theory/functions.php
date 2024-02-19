@@ -22,9 +22,13 @@ function theo_enqueue_scripts(){
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
 
 function theo_show_meta() {
-	echo "Hello";
+	echo "Hello 1";
 }
-add_action('wp_footer', 'theo_show_meta');
+function theo_show_meta2() {
+	echo "Hello 2";
+}
+add_action('wp_footer', 'theo_show_meta', 100);
+add_action('wp_footer', 'theo_show_meta2', 10);
 
 
 
