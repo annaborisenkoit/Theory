@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('myclass11  myclass 22'); ?>>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
 <!-- <?php 

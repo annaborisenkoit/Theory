@@ -21,14 +21,15 @@ function theo_enqueue_scripts(){
 }
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
 
-function theo_show_meta() {
-	echo "Hello 1";
+function theo_body_class($classes){
+	if(is_front_page()){
+		$classes[] = 'main-class';
+	} else if(is_singular()){
+		$classes[] = 'extra-class';
+	}
+	return $classes;
 }
-function theo_show_meta2() {
-	echo "Hello 2";
-}
-add_action('wp_footer', 'theo_show_meta', 100);
-add_action('wp_footer', 'theo_show_meta2', 10);
+add_filter('body_class', 'theo_body_class');
 
 
 
