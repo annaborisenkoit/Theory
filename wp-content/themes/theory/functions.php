@@ -22,9 +22,9 @@ function theo_enqueue_scripts(){
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
 
 function theo_show_meta() {
-	echo "<meta name='author' content='Alvarika' >";
+	echo "Hello";
 }
-add_action('wp_head', 'theo_show_meta');
+add_action('wp_body_open', 'theo_show_meta');
 
 
 
