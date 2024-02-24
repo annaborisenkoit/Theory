@@ -21,16 +21,13 @@ function theo_enqueue_scripts(){
 }
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
 
-function theo_body_class($classes){
-	if(is_front_page()){
-		$classes[] = 'main-class';
-	} else if(is_singular()){
-		$classes[] = 'extra-class';
-	}
-	return $classes;
+function theo_register_menus(){
+	register_nav_menus(array(
+		'header_nav' => 'Header Navigation',
+		'footer_nav' => 'Footer Navigation'
+	));
 }
-add_filter('body_class', 'theo_body_class');
-
+add_action('after_setup_theme', 'theo_register_menus', 0);
 
 
 
