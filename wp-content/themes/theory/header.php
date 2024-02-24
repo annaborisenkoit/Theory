@@ -23,6 +23,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php 
+	wp_nav_menu(
+		array(
+			'theme_location' => 'header_nav'
+		)
+	);
+?>
+
 <!-- <?php 
 
 		//подключение зарегистрированных в function.php скрипта и стилей (если они зарегистрированы в functions.php через wp_register_style):
