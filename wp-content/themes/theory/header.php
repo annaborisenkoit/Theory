@@ -27,11 +27,17 @@
 	wp_nav_menu(
 		array(
 			'theme_location' => 'header_nav',
-			    //добавить класс на нашу навигацию:
-				'menu_class' => 'myclass',
-				
+			//добавить класс на нашу навигацию:
+			'menu_class' => 'myclass',
+			//глубина показа вложенности:
+			'depth' => '2',
+			//оборачивание в контейнер:
+			'container' => 'div'	
 		)
 	);
+
+	//реализация формы поиска:
+	get_search_form()
 ?>
 
 <!-- <?php 
