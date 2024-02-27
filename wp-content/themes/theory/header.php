@@ -37,7 +37,7 @@
 	);
 
 	//реализация формы поиска:
-	get_search_form()
+	get_search_form();
 ?>
 
 <!-- <?php 
