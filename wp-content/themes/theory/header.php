@@ -24,34 +24,13 @@
 <?php wp_body_open(); ?>
 
 <?php 
-	wp_nav_menu(
-		array(
-			'theme_location' => 'header_nav',
-			//добавить класс на нашу навигацию:
-			'menu_class' => 'myclass',
-			//глубина показа вложенности:
-			'depth' => '2',
-			//оборачивание в контейнер:
-			'container' => 'div'	
-		)
-	);
 
-	//подключение формы поиска в шапке:
-	get_search_form();
-
+	//esc_attr() - attributes escape
+	//esc_html() - html escape
+	//esc_url() - link escape
+	
 	$name = 'Anna <strong>Borisenko</strong>';
 ?>
 
-	<!-- <?php echo esc_html($name); ?> -->
-	<?php echo $name; ?>
-
-<!-- <?php 
-
-		//подключение зарегистрированных в function.php скрипта и стилей (если они зарегистрированы в functions.php через wp_register_style):
-		wp_enqueue_style('theo-general');
-
-		wp_enqueue_script('theo-script');
-
-?> -->
-
-00000000000000000000000000
+	<a href="<?php echo esc_url(home_url("/")); ?>">Home</a>
+	
