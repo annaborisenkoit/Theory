@@ -39,10 +39,11 @@
 	//подключение формы поиска в шапке:
 	get_search_form();
 
-	$name = 'Anna "Borisenko"';
+	$name = 'Anna <strong>Borisenko</strong>';
 ?>
 
-	<input name="author" value="<?php echo esc_attr($name); ?>" />
+	<!-- <?php echo esc_html($name); ?> -->
+	<?php echo $name; ?>
 
 <!-- <?php 
 
