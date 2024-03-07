@@ -25,8 +25,8 @@
 
 <?php 
 
-	$name = __('Hello','theory');//возвращает значение
-	//_e('Hello','theory');//выводит на экран
+	esc_html__('Hello','theory');//возвращает значение
+	esc_html_e('Hello','theory');//выводит на экран
 
 ?>
 
