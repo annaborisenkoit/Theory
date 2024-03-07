@@ -25,17 +25,9 @@
 
 <?php 
 
-	//esc_attr() - attributes escape
-	//esc_html() - html escape
-	//esc_url() - link escape
-	//wp_kses() - allowed html escape - часть тегов разрешать, часть запрещать, принимает 2 параметра - 1)само значение 2)список разрешенных тегов и аттрибутов
-	//wp_kses_post() - содержит разрешенные вп теги post html allowed
-	//wp_kses_data() comments html allowed
-	//esc_js() инлайновый js например, на кнопке по click
-	
-	$name = 'Anna <a href="#" title="rerererer">WWWWWW</a><strong>Borisenko</strong>';
+	__('Hello','theory');//возвращает значение
+	_e('Hello','theory');//выводит на экран
 
-	echo wp_kses_post($name);
 ?>
 
 	
