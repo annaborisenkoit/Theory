@@ -28,14 +28,16 @@
 	//esc_attr() - attributes escape
 	//esc_html() - html escape
 	//esc_url() - link escape
-	//wp_kses() - часть тегов разрешать, часть запрещать, принимает 2 параметра - 1)само значение 2)список разрешенных тегов и аттрибутов
+	//wp_kses() - allowed html escape - часть тегов разрешать, часть запрещать, принимает 2 параметра - 1)само значение 2)список разрешенных тегов и аттрибутов
 	
-	$name = 'Anna <a href="#">WWWWWW</a><strong>Borisenko</strong>';
+	$name = 'Anna <a href="#" title="rerererer">WWWWWW</a><strong>Borisenko</strong>';
 
 	$args = array(
 		'a' => array(
-			'href' => array()
-		)
+			'href' => array(),
+			'title' => array()
+		),
+		'strong' => array()
 	);
 	echo wp_kses($name, $args);
 ?>
