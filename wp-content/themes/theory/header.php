@@ -31,7 +31,9 @@
 	$city = "Chisinau";
 	$country = "Moldova";
 
-	printf(esc_html__('My city is %1$s and my country %2$s', 'theory'), $city, $country);
+	printf(esc_html__('My city is %1$s and my country %2$s', 'theory'), $city, $country);//передать с переменной
+
+	echo '<br>'.wp_kses(__('Ales <strong>Sochirka</strong>', 'theory',), array('strong'=>array()));
 
 ?>
 
