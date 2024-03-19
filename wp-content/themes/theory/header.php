@@ -25,8 +25,13 @@
 
 <?php 
 
-	esc_html__('Hello','theory');//возвращает значение
+	esc_html__('Hello','theory');//хранит(возвращает) значение
 	esc_html_e('Hello','theory');//выводит на экран
+
+	$city = "Chisinau";
+	$country = "Moldova";
+
+	printf(esc_html__('My city is %1$s and my country %2$s', 'theory'), $city, $country);
 
 ?>
 

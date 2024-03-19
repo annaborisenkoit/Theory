@@ -43,15 +43,12 @@ function theo_theme_init(){
 				'script',
 			)
 		);
+
+		load_theme_textdomain('theory', get_template_directory().'/lang');
+
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
-function theo_custom_search($form){
-	$form = "html for form";
-
-	return $form;
-}
-add_filter('get_search_form', 'theo_custom_search');
 
 
 
@@ -74,7 +71,7 @@ function theory_setup() {
 		* If you're building a theme based on Theory, use a find and replace
 		* to change 'theory' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'theory', get_template_directory() . '/languages' );
+	
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
