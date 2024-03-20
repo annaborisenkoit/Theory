@@ -2,4 +2,8 @@
 /**
  * Template name: Homepage Template
  */
-echo 'biaaaaa';
+get_header();
+
+echo "custom content";
+
+get_footer();
