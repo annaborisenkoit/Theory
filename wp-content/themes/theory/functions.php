@@ -44,7 +44,7 @@ function theo_theme_init(){
 			)
 		);
 
-		load_theme_theory('theory', get_template_directory().'/lang');
+		load_theme_textdomain('theory', get_template_directory().'/lang');
 
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
@@ -81,10 +81,13 @@ function theory_register_post_type(){
 		'supports' => array('title', 'editor', 'author', 'thumbnail'),
 		'public' => true, 
 		'publicly_queryable' => true, 
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'has_archive' => true,
 	);
 	register_post_type('car', $args);	
 }
-add_action('init', 'theory_register_post_type')
+add_action('init', 'theory_register_post_type');
 
 
 
