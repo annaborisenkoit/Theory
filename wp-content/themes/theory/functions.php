@@ -22,15 +22,13 @@ function theo_enqueue_scripts(){
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
 
 function theo_theme_init(){
+	//регистрация локаций меню:
 	register_nav_menus(array(
 		'header_nav' => 'Header Navigation',
 		'footer_nav' => 'Footer Navigation'
 	));
 
-		/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+		//поддержка html5 тегов:
 		add_theme_support(
 			'html5',
 			array(
@@ -43,9 +41,10 @@ function theo_theme_init(){
 				'script',
 			)
 		);
-		//поддержка многоязычности
+		//поддержка многоязычности:
 		load_theme_textdomain('theory', get_template_directory().'/lang');
-		//поддержка тумб
+
+		//поддержка тумб:
 		add_theme_support( 'post-thumbnails' );
 
 }
@@ -80,7 +79,7 @@ function theory_register_post_type(){
 			'items_list_navigation' =>esc_html_x( 'Cars list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'theory' ),
 			'items_list'            =>esc_html_x( 'Cars list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'theory' ),
 		),
-		'supports' => array('title', 'editor', 'author', 'thumbnail'),
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
 		'public' => true, 
 		'publicly_queryable' => true, 
 		'show_ui' => true,
