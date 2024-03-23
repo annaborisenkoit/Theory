@@ -97,7 +97,8 @@ function theory_register_post_type(){
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'has_archive' => true,
-		'menu_icon' => 'dashicons-dashboard'
+		'menu_icon' => 'dashicons-dashboard',
+		'show_in_rest' => true
 	);
 	register_post_type('car', $args);	
 }
