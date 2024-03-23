@@ -98,9 +98,10 @@ function theory_register_post_type(){
 		'show_in_menu' => true,
 		'has_archive' => true,
 		'menu_icon' => 'dashicons-dashboard',
-		'rewrite' => array('slag' => 'cars'),
+		'rewrite' => array('slug' => 'cars'),
 		'query_var' => 'mycar',
 		'show_in_rest' => true
+
 	);
 	register_post_type('car', $args);	
 }
@@ -110,7 +111,7 @@ function theory_rewrite_rules(){
 	theory_register_post_type();
 	flush_rewrite_rules();
 }
-add_actions('after_switch_theme', 'theory_rewrite_rules');
+add_action('after_switch_theme', 'theory_rewrite_rules');
 
 
 
