@@ -79,7 +79,7 @@ function theory_register_post_type(){
 			'items_list_navigation' =>esc_html_x( 'Cars list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'theory' ),
 			'items_list'            =>esc_html_x( 'Cars list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'theory' ),
 		),
-		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
 		'public' => true, 
 		'publicly_queryable' => true, 
 		'show_ui' => true,
