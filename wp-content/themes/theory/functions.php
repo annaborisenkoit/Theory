@@ -43,8 +43,10 @@ function theo_theme_init(){
 				'script',
 			)
 		);
-
+		//поддержка многоязычности
 		load_theme_textdomain('theory', get_template_directory().'/lang');
+		//поддержка тумб
+		add_theme_support( 'post-thumbnails' );
 
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
@@ -134,7 +136,7 @@ function theory_setup() {
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+	
 
 
 
