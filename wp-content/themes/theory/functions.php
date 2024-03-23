@@ -47,6 +47,17 @@ function theo_theme_init(){
 		//поддержка тумб:
 		add_theme_support( 'post-thumbnails' );
 
+		//поддержка постформата:
+		add_theme_support('post-formats',
+			array(
+				'video',
+				'quote',
+				'image',
+				'gallery'
+			));
+		add_post_type_support('car', 'post-formats');
+		
+
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
@@ -79,7 +90,7 @@ function theory_register_post_type(){
 			'items_list_navigation' =>esc_html_x( 'Cars list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'theory' ),
 			'items_list'            =>esc_html_x( 'Cars list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'theory' ),
 		),
-		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes'),
+		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats'),
 		'hierarchical' => true,
 		'public' => true, 
 		'publicly_queryable' => true, 
