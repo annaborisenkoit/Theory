@@ -91,15 +91,13 @@ function theory_register_post_type(){
 			'items_list'            =>esc_html_x( 'Cars list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'theory' ),
 		),
 		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats'),
-		'hierarchical' => true,
 		'public' => true, 
 		'publicly_queryable' => true, 
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'has_archive' => true,
 		'menu_icon' => 'dashicons-dashboard',
-		'rewrite' => array('slug' => 'cars'),
-		'query_var' => 'mycar',
+		'rewrite' => array('slug' => 'cars'),	
 		'show_in_rest' => true
 
 	);
