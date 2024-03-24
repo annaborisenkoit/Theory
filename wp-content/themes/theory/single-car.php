@@ -2,11 +2,15 @@
 
 get_header();
 
+?>
 
+my custom template
+
+<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'parcials/content', get_post_type() );
+			get_template_part( 'partials/content', get_post_type() );
 
 			the_post_navigation(
 				array(
@@ -21,4 +25,6 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-?>
+
+
+get_footer();
