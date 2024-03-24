@@ -12,6 +12,7 @@ get_header();
 
 	
 	<div>
+    Template for Custom Post Type Car
 
 			<header class="page-header">
 				<?php
