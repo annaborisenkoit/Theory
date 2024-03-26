@@ -81,6 +81,7 @@ function theory_register_post_type(){
 		'show_ui' => true,
 		'rewrite' => array('slug' => 'brands'),
 		'query_var' => true,
+		'show_in_rest' => true
 	);
 	
 	register_taxonomy('brand', array('car'), $args);
