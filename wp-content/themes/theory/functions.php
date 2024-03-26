@@ -107,6 +107,7 @@ function theory_register_post_type(){
 		'show_ui' => true,
 		'rewrite' => array('slug' => 'manufectures'),
 		'query_var' => true,
+		'show_admin_column' => true,
 		'show_in_rest' => true
 	);
 	
