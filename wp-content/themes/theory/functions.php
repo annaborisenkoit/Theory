@@ -62,6 +62,29 @@ function theo_theme_init(){
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
 function theory_register_post_type(){
+	
+	$args = array(
+		'hierarchical' => false,
+		'labels' => array(
+			'name'              => esc_html_x( 'Brands', 'taxonomy general name', 'theory' ),
+			'singular_name'     => esc_html_x( 'Brand', 'taxonomy singular name', 'theory' ),
+			'search_items'      => esc_html__( 'Search Brands', 'theory' ),
+			'all_items'         => esc_html__( 'All Brands', 'theory' ),
+			'parent_item'       => esc_html__( 'Parent Brand', 'theory' ),
+			'parent_item_colon' => esc_html__( 'Parent Brand:', 'theory' ),
+			'edit_item'         => esc_html__( 'Edit Brand', 'theory' ),
+			'update_item'       => esc_html__( 'Update Brand', 'theory' ),
+			'add_new_item'      => esc_html__( 'Add New Brand', 'theory' ),
+			'new_item_name'     => esc_html__( 'New Brand Name', 'theory' ),
+			'menu_name'         => esc_html__( 'Brand', 'theory' ),
+		),
+		'show_ui' => true,
+		'rewrite' => array('slug' => 'brands'),
+		'query_var' => true,
+	);
+	
+	register_taxonomy('brand', array('car'), $args);
+
 	$args = array(
 		'label' => esc_html__('Cars', 'theory'),
 		'labels' => array(
@@ -101,7 +124,7 @@ function theory_register_post_type(){
 		'show_in_rest' => true
 
 	);
-	register_post_type('car', $args);	
+	register_post_type('car', $args);
 }
 add_action('init', 'theory_register_post_type');
 
