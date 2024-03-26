@@ -86,6 +86,35 @@ function theory_register_post_type(){
 	
 	register_taxonomy('brand', array('car'), $args);
 
+	unset($args);
+
+
+	$args = array(
+		'hierarchical' => true,
+		'labels' => array(
+			'name'              => esc_html_x( 'Manufectures', 'taxonomy general name', 'theory' ),
+			'singular_name'     => esc_html_x( 'Manufecture', 'taxonomy singular name', 'theory' ),
+			'search_items'      => esc_html__( 'Search Manufectures', 'theory' ),
+			'all_items'         => esc_html__( 'All Manufectures', 'theory' ),
+			'parent_item'       => esc_html__( 'Parent Manufecture', 'theory' ),
+			'parent_item_colon' => esc_html__( 'Parent Manufecture:', 'theory' ),
+			'edit_item'         => esc_html__( 'Edit Manufecture', 'theory' ),
+			'update_item'       => esc_html__( 'Update Manufecture', 'theory' ),
+			'add_new_item'      => esc_html__( 'Add New Manufecture', 'theory' ),
+			'new_item_name'     => esc_html__( 'New Manufecture Name', 'theory' ),
+			'menu_name'         => esc_html__( 'Manufecture', 'theory' ),
+		),
+		'show_ui' => true,
+		'rewrite' => array('slug' => 'manufectures'),
+		'query_var' => true,
+		'show_in_rest' => true
+	);
+	
+	register_taxonomy('manufecture', array('car'), $args);
+
+	unset($args);
+
+
 	$args = array(
 		'label' => esc_html__('Cars', 'theory'),
 		'labels' => array(
