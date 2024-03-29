@@ -62,7 +62,7 @@ function theo_theme_init(){
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
 function theory_register_post_type(){
-	
+
 	$args = array(
 		'hierarchical' => false,
 		'labels' => array(
@@ -81,11 +81,12 @@ function theory_register_post_type(){
 		'show_ui' => true,
 		'rewrite' => array('slug' => 'brands'),
 		'query_var' => true,
+		'show_admin_column' => true,
 		'show_in_rest' => true
 	);
 	
 	register_taxonomy('brand', array('car'), $args);
-
+	
 	unset($args);
 
 
@@ -105,6 +106,7 @@ function theory_register_post_type(){
 			'menu_name'         => esc_html__( 'Manufecture', 'theory' ),
 		),
 		'show_ui' => true,
+		'has_archive' => true,
 		'rewrite' => array('slug' => 'manufectures'),
 		'query_var' => true,
 		'show_admin_column' => true,
@@ -156,6 +158,7 @@ function theory_register_post_type(){
 
 	);
 	register_post_type('car', $args);
+
 }
 add_action('init', 'theory_register_post_type');
 
