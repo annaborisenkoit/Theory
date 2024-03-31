@@ -23,6 +23,13 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+
+	if(is_tax()){
+		echo "Header for Taxonome pages";
+	}else {
+		echo "simple Header";
+	}
 
 
 	
