@@ -93,27 +93,27 @@ function theory_register_post_type(){
 	$args = array(
 		'hierarchical' => true,
 		'labels' => array(
-			'name'              => esc_html_x( 'Manufectures', 'taxonomy general name', 'theory' ),
-			'singular_name'     => esc_html_x( 'Manufecture', 'taxonomy singular name', 'theory' ),
-			'search_items'      => esc_html__( 'Search Manufectures', 'theory' ),
-			'all_items'         => esc_html__( 'All Manufectures', 'theory' ),
-			'parent_item'       => esc_html__( 'Parent Manufecture', 'theory' ),
-			'parent_item_colon' => esc_html__( 'Parent Manufecture:', 'theory' ),
-			'edit_item'         => esc_html__( 'Edit Manufecture', 'theory' ),
-			'update_item'       => esc_html__( 'Update Manufecture', 'theory' ),
-			'add_new_item'      => esc_html__( 'Add New Manufecture', 'theory' ),
-			'new_item_name'     => esc_html__( 'New Manufecture Name', 'theory' ),
-			'menu_name'         => esc_html__( 'Manufecture', 'theory' ),
+			'name'              => esc_html_x( 'Manufactures', 'taxonomy general name', 'theory' ),
+			'singular_name'     => esc_html_x( 'Manufacture', 'taxonomy singular name', 'theory' ),
+			'search_items'      => esc_html__( 'Search Manufactures', 'theory' ),
+			'all_items'         => esc_html__( 'All Manufactures', 'theory' ),
+			'parent_item'       => esc_html__( 'Parent Manufacture', 'theory' ),
+			'parent_item_colon' => esc_html__( 'Parent Manufacture:', 'theory' ),
+			'edit_item'         => esc_html__( 'Edit Manufacture', 'theory' ),
+			'update_item'       => esc_html__( 'Update Manufacture', 'theory' ),
+			'add_new_item'      => esc_html__( 'Add New Manufacture', 'theory' ),
+			'new_item_name'     => esc_html__( 'New Manufacture Name', 'theory' ),
+			'menu_name'         => esc_html__( 'Manufacture', 'theory' ),
 		),
 		'show_ui' => true,
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'manufectures'),
+		'rewrite' => array('slug' => 'manufactures'),
 		'query_var' => true,
 		'show_admin_column' => true,
 		'show_in_rest' => true
 	);
 	
-	register_taxonomy('manufecture', array('car'), $args);
+	register_taxonomy('manufacture', array('car'), $args);
 
 	unset($args);
 
