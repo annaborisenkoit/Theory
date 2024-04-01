@@ -61,8 +61,6 @@ function theo_theme_init(){
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
-taxonomy_exists('brand')
-
 function theory_register_post_type(){
 
 	$args = array(
@@ -86,9 +84,10 @@ function theory_register_post_type(){
 		'show_admin_column' => true,
 		'show_in_rest' => true
 	);
-	
-	register_taxonomy('brand', array('car'), $args);
-	
+	if(!taxonomy_exists('brand')){
+		register_taxonomy('brand', array('car'), $args);
+	}
+		
 	unset($args);
 
 
