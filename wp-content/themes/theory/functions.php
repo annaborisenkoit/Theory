@@ -61,6 +61,8 @@ function theo_theme_init(){
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
+taxonomy_exists('brand')
+
 function theory_register_post_type(){
 
 	$args = array(
