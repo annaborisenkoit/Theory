@@ -28,7 +28,7 @@
 	if(is_tax()){
 		echo "Header for Taxonome pages";
 	}else {
-		echo "simple Header";
+		echo "Simple Header";
 	}
 
 
