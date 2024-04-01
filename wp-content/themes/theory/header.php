@@ -25,8 +25,8 @@
 
 <?php
 
-	if(is_tax()){
-		echo "Header for Taxonome pages";
+	if(is_tax('brand')){
+		echo "Header for Brand page";
 	}else {
 		echo "Simple Header";
 	}
