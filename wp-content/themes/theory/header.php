@@ -25,7 +25,7 @@
 
 <?php
 
-	if(is_tax('brand')){
+	if(is_tax('brand','bmw')){
 		echo "Header for Brand page";
 	}else {
 		echo "Simple Header";
