@@ -3,5 +3,6 @@
 if ( ! is_active_sidebar( 'carsidebar' ) ) {
 	return;
 }
-
-dynamic_sidebar('carsidebar');
+echo '<aside id="secondary" class="widget-area">';
+    dynamic_sidebar('carsidebar');
+echo '</aside>';
