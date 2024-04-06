@@ -19,3 +19,6 @@ echo $term->name; ?>
 		<?php endif; ?>
 
 	</div>
+
+	get_sidebar('cars');
+	get_footer();
