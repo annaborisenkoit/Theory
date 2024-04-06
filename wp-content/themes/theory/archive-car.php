@@ -35,8 +35,12 @@ get_header();
 
 <?php
 
-echo '<aside id="secondary" class="widget-area">';
-    dynamic_sidebar('carsidebar');
-echo '</aside>';
+//проверка - если есть виджеты, тогда подключаем сайдбар
+if(is_active_sidebar( 'carsidebar' )){
+	echo '<aside id="secondary" class="widget-area">
+	еееееееееееееееееее';
+		dynamic_sidebar('carsidebar');
+	echo '</aside>';
+}
 
 get_footer();
