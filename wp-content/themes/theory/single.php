@@ -36,5 +36,10 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+	if(is_singular('car')){
+		get_sidebar('cars');
+	} else {
+		get_sidebar();
+	}
+
 get_footer();
