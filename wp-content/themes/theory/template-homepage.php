@@ -5,20 +5,28 @@
 get_header();
 ?>
 
-<div>
+    <div class="cars">
 
-<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+        <?php
+        $args = array(
+            
+            'post_type' => 'car',            
+            'posts_per_page' => 1
+        );
+        $cars = new WP_Query($args); ?>
 
-    <?php get_template_part('partials/content'); ?> 
+        <?php if($cars->have_posts()) : while($cars->have_posts()) : $cars->the_post(); ?>
 
-<?php endwhile; else : ?>
+            <?php get_template_part('partials/content'); ?> 
 
-    <?php get_template_part('partials/content', 'none'); ?> 
+        <?php endwhile; else : ?>
 
-<?php endif; ?>
+            <?php get_template_part('partials/content', 'none'); ?> 
 
-</div>
+        <?php endif; ?>
+
+    </div>
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
