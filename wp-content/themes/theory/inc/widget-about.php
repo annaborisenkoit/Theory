@@ -16,10 +16,10 @@ class Theory_About_Widget extends WP_Widget {
         echo $before_widget;
 
         if($title){
-            echo $before_title . esc_html($title) . after_title;
+            echo $before_title . esc_html($title) . $after_title;
         }
         if($text){
-            echo wp_kses_post($test);
+            echo wp_kses_post($text);
         }        
 
         echo $after_widget;
@@ -51,7 +51,7 @@ class Theory_About_Widget extends WP_Widget {
         <?php esc_html_e('Title', 'theory'); ?>
         </label>
 
-        <textarea class="widefat" id="<?php echo $this->get_field_id('text');  ?>" name="<?php echo $this->get_field_name('text');  ?>" type="text"><?php echo esc_attr($title) ?></textarea>
+        <textarea class="widefat" id="<?php echo $this->get_field_id('text');  ?>" name="<?php echo $this->get_field_name('text');  ?>" type="text"><?php echo esc_attr($text) ?></textarea>
     </p>
 
 <?php }
