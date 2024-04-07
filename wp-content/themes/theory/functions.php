@@ -7,6 +7,8 @@
  * @package Theory
  */
 
+ require get_template_directory() . '/inc/widget-about.php';
+
  function theory_widgets_init() {
 	register_sidebar(
 		array(
@@ -31,6 +33,8 @@
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_widget('Theory_About_Widget');
 }
 add_action( 'widgets_init', 'theory_widgets_init' );
 
