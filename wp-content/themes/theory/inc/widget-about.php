@@ -29,7 +29,7 @@ class Theory_About_Widget extends WP_Widget {
         $args = array(
             
             'post_type' => 'post',            
-            'posts_per_page' => -1
+            'posts_per_page' => 1
         );
         $blogpost = new WP_Query($args); ?>
 
@@ -45,6 +45,8 @@ class Theory_About_Widget extends WP_Widget {
         
         wp_reset_postdata();
         ?>
+
+        <?
 
         echo $after_widget;
     }
