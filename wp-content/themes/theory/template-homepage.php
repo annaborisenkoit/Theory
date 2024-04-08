@@ -8,15 +8,19 @@ get_header();
     <div class="cars">
 
         <?php
-        $args = array(
-            
+        $args = array(            
             'post_type' => 'car',
             'tax_query' => array(
+                'relation' => 'OR',
                 array(
                     'taxonomy' => 'brand',
                     'field' => 'slug',
-                    'terms' => 'bmwпше фвв ю
-                    ',
+                    'terms' => array('mersedes'),
+                ),
+                array(
+                    'taxonomy' => 'manufacture',
+                    'field' => 'slug',
+                    'terms' => array( '2019' ),
                 ),
             ),            
             'posts_per_page' => -1
