@@ -10,7 +10,15 @@ get_header();
         <?php
         $args = array(
             
-            'post_type' => 'car',            
+            'post_type' => 'car',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'brand',
+                    'field' => 'slug',
+                    'terms' => 'bmwпше фвв ю
+                    ',
+                ),
+            ),            
             'posts_per_page' => -1
         );
         $cars = new WP_Query($args); ?>
