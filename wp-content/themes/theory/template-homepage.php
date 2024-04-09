@@ -10,19 +10,8 @@ get_header();
         <?php
         $args = array(            
             'post_type' => 'car',
-            'tax_query' => array(
-                'relation' => 'OR',
-                array(
-                    'taxonomy' => 'brand',
-                    'field' => 'slug',
-                    'terms' => array('mersedes'),
-                ),
-                array(
-                    'taxonomy' => 'manufacture',
-                    'field' => 'slug',
-                    'terms' => array( '2019' ),
-                ),
-            ),            
+            'orderby' => 'title',
+            'order' => 'ASC',          
             'posts_per_page' => -1
         );
         $cars = new WP_Query($args); ?>
