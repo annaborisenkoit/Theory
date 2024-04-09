@@ -11,7 +11,7 @@ get_header();
         $args = array(            
             'post_type' => 'car',
             'orderby' => 'title',
-            'order' => 'ASC',          
+            'order' => 'DESK',          
             'posts_per_page' => -1
         );
         $cars = new WP_Query($args); ?>
