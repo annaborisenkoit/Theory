@@ -8,7 +8,7 @@
 
 		<?php endwhile; 
 		
-		posts_nav_link();
+		posts_nav_link('.', esc_html__('Prev', 'theory'), esc_html__('Next', 'theory'));
 		
 		else : ?>
 
