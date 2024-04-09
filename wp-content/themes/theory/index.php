@@ -6,7 +6,11 @@
 
 			<?php get_template_part('partials/content'); ?> 
 
-		<?php endwhile; else : ?>
+		<?php endwhile; 
+		
+		posts_nav_link();
+		
+		else : ?>
 
 			<?php get_template_part('partials/content', 'none'); ?> 
 
