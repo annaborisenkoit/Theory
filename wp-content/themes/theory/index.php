@@ -10,10 +10,7 @@
 		
 		?>
 			<div class="pagination">
-				<?php the_posts_pagination(array(
-					'prev_text' => esc_html__('Back', 'theory'),
-					'next_text' => esc_html__('Onward', 'theory'),
-				)); ?>
+				<?php echo paginate_links(); ?>
 			</div>
 		<?php
 		
