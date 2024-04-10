@@ -8,7 +8,18 @@
 
 		<?php endwhile; 
 		
-		posts_nav_link('.', esc_html__('Prev', 'theory'), esc_html__('Next', 'theory'));
+		?>
+			<div class="pagination">
+				<div class="prev">
+					<?php previous_posts_link('Prev'); ?>
+				</>
+				<!-- HTML Code -->
+
+				<div class="next">
+				<?php next_posts_link('Next'); ?>
+				</div>
+			</div>
+		<?php
 		
 		else : ?>
 
