@@ -11,12 +11,12 @@
 		?>
 			<div class="pagination">
 				<div class="prev">
-					<?php previous_posts_link('Prev'); ?>
+					<?php get_previous_posts_link('Prev'); ?>
 				</>
 				<!-- HTML Code -->
 
 				<div class="next">
-				<?php next_posts_link('Next'); ?>
+				<?php get_next_posts_link('Next'); ?>
 				</div>
 			</div>
 		<?php
