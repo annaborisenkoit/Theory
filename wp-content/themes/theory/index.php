@@ -10,14 +10,10 @@
 		
 		?>
 			<div class="pagination">
-				<div class="prev">
-					<?php get_previous_posts_link('Prev'); ?>
-				</>
-				<!-- HTML Code -->
-
-				<div class="next">
-				<?php get_next_posts_link('Next'); ?>
-				</div>
+				<?php the_posts_pagination(array(
+					'prev_text' => esc_html__('Back', 'theory'),
+					'next_text' => esc_html__('Onward', 'theory'),
+				)); ?>
 			</div>
 		<?php
 		
