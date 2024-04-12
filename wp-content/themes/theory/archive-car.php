@@ -23,7 +23,7 @@ get_header();
 
 <?php 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$cars = new WP_Query(array('post_type' => 'car', 'posts_per_page' => 1, 'paged' => $paged));
+$cars = new WP_Query(array('post_type' => 'car', 'posts_per_page' => 3, 'paged' => $paged));
 
 if($cars->have_posts()) : while($cars->have_posts()) : $cars->the_post(); ?>
 
