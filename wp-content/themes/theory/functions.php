@@ -17,8 +17,8 @@
 		'format' => '?paged=%#%',
 		'current' => max( 1, get_query_var('paged') ),
 		'total' => $query->max_num_pages,
-		'prev_text' => 'qqqqqqqqqqq',
-		'next_text' => 'nnnnnneeeeext'
+		'prev_next' => false,
+		'type' => 'list'
 	) );
  }
 
