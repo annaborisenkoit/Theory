@@ -15,4 +15,4 @@ function theory_child_widgets_init() {
 	);
 
 }
-add_action( 'widgets_init', 'theory_widgets_init' );
+add_action( 'widgets_init', 'theory_child_widgets_init' );
