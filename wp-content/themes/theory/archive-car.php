@@ -27,7 +27,7 @@ $cars = new WP_Query(array('post_type' => 'car', 'posts_per_page' => 3, 'paged' 
 
 if($cars->have_posts()) : while($cars->have_posts()) : $cars->the_post(); ?>
 
-	<?php get_template_part('partials/content'); ?> 
+	<?php get_template_part('partials/content', 'car'); ?> 
 
 <?php endwhile; ?>
 	<div class="pagination">
