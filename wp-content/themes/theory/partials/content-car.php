@@ -9,6 +9,7 @@
 
 if(has_post_thumbnail(get_the_ID())) {
     the_post_thumbnail('car-cover');
+    echo get_the_post_thumbnail(get_the_ID(), array(100,100));
 }
 
 ?>    
