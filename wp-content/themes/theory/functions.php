@@ -97,7 +97,7 @@ function theo_theme_init(){
 
 		//поддержка тумб:
 		add_theme_support( 'post-thumbnails' );
-		add_image_size('car-cover', 240, 188, true);
+		add_image_size('car-cover', 240, 188, array('left', 'top'));
 
 		update_option('thumbnail_size_w', 170);
 		update_option('thumbnail_size_h', 170);
