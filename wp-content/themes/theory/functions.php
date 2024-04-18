@@ -8,6 +8,7 @@
  */
 
  require get_template_directory() . '/inc/widget-about.php';
+ require get_template_directory() . '/inc/metaboxes.php';
 
  function theory_paginate($query){
 	$big = 999999999; // need an unlikely integer
