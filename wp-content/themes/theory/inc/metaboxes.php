@@ -26,3 +26,20 @@ function theory_cars_metabox_html($post) {
         </p>
     <?php
 }
+
+function theory_save_metabox($post_id, $post){
+    if(isset($_POST['car_price'])){
+        update_post_meta($post_id, 'car_price', sanitize_text_field($_POST['car_price']));
+    } else{
+        delete_post_meta($post_id, 'car_price');
+    }
+
+    if(isset($_POST['car_engine'])){
+        update_post_meta($post_id, 'car_engine', sanitize_text_field($_POST['car_engine']));
+    } else{
+        delete_post_meta($post_id, 'car_engine');
+    }
+
+    return $post_id;
+}
+add_action('save_post', 'theory_save_metabox', 10, 2);
