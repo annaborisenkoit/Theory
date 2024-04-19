@@ -30,6 +30,11 @@ function theory_cars_metabox_html($post) {
 }
 
 function theory_save_metabox($post_id, $post){
+
+    if(!isset($_POST['_carmetabox']) "" || ! wp_verify_nonce($_POST['_carmetabox'], 'theoryrandomstring')){
+        return $post_id;
+    }
+
     if(isset($_POST['car_price'])){
         update_post_meta($post_id, 'car_price', sanitize_text_field($_POST['car_price']));
     } else{
