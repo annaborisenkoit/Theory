@@ -11,6 +11,8 @@ function theory_cars_metabox_html($post) {
     $car_price = get_post_meta($post->ID, 'car_price', true);
     $car_engine = get_post_meta($post->ID, 'car_engine', true);
 
+    wp_nonce_field('theoryrandomstring', '_carmetabox');
+
     ?>
         <p>
             <label for="car_price"><?php esc_html_e('Car Price', 'theory');  ?></label>
