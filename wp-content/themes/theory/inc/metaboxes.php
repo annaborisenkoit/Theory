@@ -35,6 +35,10 @@ function theory_save_metabox($post_id, $post){
         return $post_id;
     }
 
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return $post_id;
+    }
+
     if(isset($_POST['car_price'])){
         update_post_meta($post_id, 'car_price', sanitize_text_field($_POST['car_price']));
     } else{
