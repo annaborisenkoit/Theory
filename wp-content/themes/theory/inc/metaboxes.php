@@ -31,11 +31,15 @@ function theory_cars_metabox_html($post) {
 
 function theory_save_metabox($post_id, $post){
 
-    if(!isset($_POST['_carmetabox']) "" || ! wp_verify_nonce($_POST['_carmetabox'], 'theoryrandomstring')){
+    if(!isset($_POST['_carmetabox']) || !wp_verify_nonce($_POST['_carmetabox'], 'theoryrandomstring')){
         return $post_id;
     }
 
     if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return $post_id;
+    }
+
+    if($post->post_type !='car'){
         return $post_id;
     }
 
