@@ -43,6 +43,11 @@ function theory_save_metabox($post_id, $post){
         return $post_id;
     }
 
+    $post_type = get_post_type_object( $post->post_type );
+    if(!current_user_can($post_type->cap->edit_post, $post_id)){
+        return $post_id;
+    }
+
     if(isset($_POST['car_price'])){
         update_post_meta($post_id, 'car_price', sanitize_text_field($_POST['car_price']));
     } else{
