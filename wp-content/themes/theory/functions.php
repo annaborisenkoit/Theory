@@ -38,8 +38,8 @@ function theory_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'               => 'TGM Example Plugin', // The plugin name.
-			'slug'               => 'tgm-example-plugin', // The plugin slug (typically the folder name).
+			'name'               => 'Theory Core', // The plugin name.
+			'slug'               => 'theory-core', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory() . '/plugins/theory-core.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '1.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
