@@ -32,5 +32,11 @@
 	}
 ?>
 
+<?php
+
+global $theory_options;
+
+echo $theory_options['phone'];
+
 	
 	
