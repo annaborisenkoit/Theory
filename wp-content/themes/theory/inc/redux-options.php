@@ -310,6 +310,14 @@ Redux::set_section(
 				'desc'     => esc_html__('Basic Media uploader with disabled URL input field', 'your-textdomain-here' ),
 				'subtitle' => esc_html__('Upload any media', 'your-textdomain-here' ),
 			),
+			array(
+				'id'       => 'phone',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Text Field', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Subtitle', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Field Description', 'your-textdomain-here' ),
+				'default'  => 'Default Text',
+			),
 		)
 	)
 );
