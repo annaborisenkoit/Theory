@@ -159,7 +159,7 @@ $args = array(
 
 	// Allows dynamic CSS to be generated for customizer and google fonts,
 	// but stops the dynamic CSS from going to the page head.
-	'output_tag'                => true,
+	'output_tag'                => false,
 
 	// Disable the footer credit of Redux. Please leave if you can help it.
 	'footer_credit'             => '',
@@ -219,7 +219,7 @@ $args = array(
 // PLEASE CHANGE THESE SETTINGS IN YOUR THEME BEFORE RELEASING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
 $args['share_icons'][] = array(
-	'url'   => '//github.com/ReduxFramework/ReduxFramework',
+	'url'   => '//github.com/annaborisenkoit',
 	'title' => 'Visit us on GitHub',
 	'icon'  => 'el el-github',
 );
@@ -259,9 +259,9 @@ $help_tabs = array(
 		'title'   => esc_html__( 'Theme Information 2', 'your-textdomain-here' ),
 		'content' => '<p>' . esc_html__( 'This is the tab content, HTML is allowed.', 'your-textdomain-here' ) . '</p>',
 	),
-    array(
+	array(
 		'id'      => 'redux-help-tab-3',
-		'title'   => esc_html__( '3 Theme Information', 'your-textdomain-here' ),
+		'title'   => esc_html__( '3Theme Information 2', 'your-textdomain-here' ),
 		'content' => '<p>' . esc_html__( '3 This is the tab content, HTML is allowed.', 'your-textdomain-here' ) . '</p>',
 	),
 );
@@ -281,6 +281,40 @@ Redux::set_help_sidebar( $opt_name, $content );
  */
 
 // -> START Basic Fields
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Site Settings', 'your-textdomain-here' ),
+		'id'               => 'site_settings',
+		'desc'             => esc_html__( 'These are really basic fields!', 'your-textdomain-here' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-leaf',
+	)
+);
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Header Settings', 'your-textdomain-here' ),
+		'id'               => 'site_settings_header',
+		'subsection'       => true,
+		'desc'             => esc_html__( 'Settings For Header', 'your-textdomain-here' ),
+		'customizer_width' => '400px',
+		'fields'           => array(
+			array(
+				'id'       => 'logo',
+				'type'     => 'media',
+				'url'      => true,
+				'title'    => esc_html__('The Site Logo', 'your-textdomain-here' ),
+				'compiler' => true,
+				'desc'     => esc_html__('Basic Media uploader with disabled URL input field', 'your-textdomain-here' ),
+				'subtitle' => esc_html__('Upload any media', 'your-textdomain-here' ),
+			),
+		)
+	)
+);
+
+
 Redux::set_section(
 	$opt_name,
 	array(
