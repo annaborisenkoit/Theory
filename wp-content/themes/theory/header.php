@@ -36,7 +36,7 @@
 
 global $theory_options;
 
-echo $theory_options['phone'];
+print_r($theory_options['logo']);
 
 	
 	
