@@ -23,20 +23,20 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php
+<!-- <?php
 
 	if(is_tax('brand', array('mersedes', 'bmw'))){
 		echo "Header for Brand page";
 	}else {
 		echo "Simple Header";
 	}
-?>
+?> -->
 
 <?php
 
 global $theory_options;
 
-print_r($theory_options['logo']);
+echo $theory_options['logo'] ['url'];
 
 	
 	

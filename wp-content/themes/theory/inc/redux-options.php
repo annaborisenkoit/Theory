@@ -306,7 +306,7 @@ Redux::set_section(
 				'type'     => 'media',
 				'url'      => true,
 				'title'    => esc_html__('The Site Logo', 'your-textdomain-here' ),
-				'compiler' => true,
+				'compiler' => 'true',
 				'desc'     => esc_html__('Basic Media uploader with disabled URL input field', 'your-textdomain-here' ),
 				'subtitle' => esc_html__('Upload any media', 'your-textdomain-here' ),
 			),
