@@ -91,3 +91,8 @@ class Theory_About_Widget extends WP_Widget {
         return $instance;
     }
 }
+
+function theory_register_about_widget() {
+    register_widget('Theory_About_Widget');
+}
+add_action( 'widgets_init', 'theory_register_about_widget' );

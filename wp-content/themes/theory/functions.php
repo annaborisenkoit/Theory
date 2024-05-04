@@ -7,36 +7,14 @@
  * @package Theory
  */
 
- require get_template_directory() . '/inc/widget-about.php';
- require get_template_directory() . '/inc/metaboxes.php';
- require get_template_directory() . '/inc/acf.php';
- require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
- require_once get_template_directory() . '/inc/redux-options.php';
+ 
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/redux-options.php';
 
  add_action( 'tgmpa_register', 'theory_register_required_plugins' );
 
-/**
- * Register the required plugins for this theme.
- *
- * In this example, we register five plugins:
- * - one included with the TGMPA library
- * - two from an external source, one from an arbitrary source, one from a GitHub repository
- * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
- *
- * The variables passed to the `tgmpa()` function should be:
- * - an array of plugin arrays;
- * - optionally a configuration array.
- * If you are not changing anything in the configuration array, you can remove the array and remove the
- * variable from the function call: `tgmpa( $plugins );`.
- * In that case, the TGMPA default settings will be used.
- *
- * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
- */
 function theory_register_required_plugins() {
-	/*
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
+
 	$plugins = array(
 
 		array(
@@ -77,8 +55,7 @@ function theory_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
-
- function theory_paginate($query){
+function theory_paginate($query){
 	$big = 999999999; // need an unlikely integer
 
 	$paged = '';
@@ -96,8 +73,8 @@ function theory_register_required_plugins() {
 		'prev_next' => false,
 	) );
  }
-
- function theory_widgets_init() {
+ 
+function theory_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'theory' ),
@@ -122,10 +99,8 @@ function theory_register_required_plugins() {
 		)
 	);
 
-	register_widget('Theory_About_Widget');
 }
 add_action( 'widgets_init', 'theory_widgets_init' );
-
 
 function theo_enqueue_scripts(){
 	//если надо и зарегистрировать и вывести скрипты и стили:	
@@ -161,6 +136,10 @@ function theo_theme_init(){
 				'script',
 			)
 		);
+
+		add_theme_support( 'automatic-feed-links' );
+		//add_theme_support( 'title-tag' );
+
 		//поддержка многоязычности:
 		load_theme_textdomain('theory', get_template_directory().'/lang');
 
@@ -186,232 +165,15 @@ function theo_theme_init(){
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
-function theory_register_post_type(){
-
-	$args = array(
-		'hierarchical' => false,
-		'labels' => array(
-			'name'              => esc_html_x( 'Brands', 'taxonomy general name', 'theory' ),
-			'singular_name'     => esc_html_x( 'Brand', 'taxonomy singular name', 'theory' ),
-			'search_items'      => esc_html__( 'Search Brands', 'theory' ),
-			'all_items'         => esc_html__( 'All Brands', 'theory' ),
-			'parent_item'       => esc_html__( 'Parent Brand', 'theory' ),
-			'parent_item_colon' => esc_html__( 'Parent Brand:', 'theory' ),
-			'edit_item'         => esc_html__( 'Edit Brand', 'theory' ),
-			'update_item'       => esc_html__( 'Update Brand', 'theory' ),
-			'add_new_item'      => esc_html__( 'Add New Brand', 'theory' ),
-			'new_item_name'     => esc_html__( 'New Brand Name', 'theory' ),
-			'menu_name'         => esc_html__( 'Brand', 'theory' ),
-		),
-		'show_ui' => true,
-		'rewrite' => array('slug' => 'brands'),
-		'query_var' => true,
-		'show_admin_column' => true,
-		'show_in_rest' => true
-	);
-	if(!taxonomy_exists('brand')){
-		register_taxonomy('brand', array('car'), $args);
-	}
-		
-	unset($args);
-
-
-	$args = array(
-		'hierarchical' => true,
-		'labels' => array(
-			'name'              => esc_html_x( 'Manufactures', 'taxonomy general name', 'theory' ),
-			'singular_name'     => esc_html_x( 'Manufacture', 'taxonomy singular name', 'theory' ),
-			'search_items'      => esc_html__( 'Search Manufactures', 'theory' ),
-			'all_items'         => esc_html__( 'All Manufactures', 'theory' ),
-			'parent_item'       => esc_html__( 'Parent Manufacture', 'theory' ),
-			'parent_item_colon' => esc_html__( 'Parent Manufacture:', 'theory' ),
-			'edit_item'         => esc_html__( 'Edit Manufacture', 'theory' ),
-			'update_item'       => esc_html__( 'Update Manufacture', 'theory' ),
-			'add_new_item'      => esc_html__( 'Add New Manufacture', 'theory' ),
-			'new_item_name'     => esc_html__( 'New Manufacture Name', 'theory' ),
-			'menu_name'         => esc_html__( 'Manufacture', 'theory' ),
-		),
-		'show_ui' => true,
-		'has_archive' => true,
-		'rewrite' => array('slug' => 'manufactures'),
-		'query_var' => true,
-		'show_admin_column' => true,
-		'show_in_rest' => true
-	);
-	
-	register_taxonomy('manufacture', array('car'), $args);
-
-	unset($args);
-
-
-	$args = array(
-		'label' => esc_html__('Cars', 'theory'),
-		'labels' => array(
-			'name'                  =>esc_html_x( 'Cars', 'Post type general name', 'theory' ),
-			'singular_name'         =>esc_html_x( 'Car', 'Post type singular name', 'theory' ),
-			'menu_name'             =>esc_html_x( 'Cars', 'Admin Menu text', 'theory' ),
-			'name_admin_bar'        =>esc_html_x( 'Car', 'Add New on Toolbar', 'theory' ),
-			'add_new'               =>esc_html__( 'Add New', 'theory' ),
-			'add_new_item'          =>esc_html__( 'Add New Car', 'theory' ),
-			'new_item'              =>esc_html__( 'New Car', 'theory' ),
-			'edit_item'             =>esc_html__( 'Edit Car', 'theory' ),
-			'view_item'             =>esc_html__( 'View Car', 'theory' ),
-			'all_items'             =>esc_html__( 'All Cars', 'theory' ),
-			'search_items'          =>esc_html__( 'Search Cars', 'theory' ),
-			'parent_item_colon'     =>esc_html__( 'Parent Cars:', 'theory' ),
-			'not_found'             =>esc_html__( 'No Cars found.', 'theory' ),
-			'not_found_in_trash'    =>esc_html__( 'No Cars found in Trash.', 'theory' ),
-			'featured_image'        =>esc_html_x( 'Car Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'theory' ),
-			'set_featured_image'    =>esc_html_x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'theory' ),
-			'remove_featured_image' =>esc_html_x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'theory' ),
-			'use_featured_image'    =>esc_html_x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'theory' ),
-			'archives'              =>esc_html_x( 'Car archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'theory' ),
-			'insert_into_item'      =>esc_html_x( 'Insert into Car', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'theory' ),
-			'uploaded_to_this_item' =>esc_html_x( 'Uploaded to this Car', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'theory' ),
-			'filter_items_list'     =>esc_html_x( 'Filter Cars list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'theory' ),
-			'items_list_navigation' =>esc_html_x( 'Cars list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'theory' ),
-			'items_list'            =>esc_html_x( 'Cars list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'theory' ),
-		),
-		'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'page-attributes', 'post-formats'),
-		'public' => true, 
-		'publicly_queryable' => true, 
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'has_archive' => true,
-		'menu_icon' => 'dashicons-dashboard',
-		'rewrite' => array('slug' => 'cars'),	
-		'show_in_rest' => true
-
-	);
-	register_post_type('car', $args);
-
-}
-add_action('init', 'theory_register_post_type');
-
 function theory_rewrite_rules(){
 	theory_register_post_type();
 	flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'theory_rewrite_rules');
 
-
-
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
-}
-
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function theory_setup() {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Theory, use a find and replace
-		* to change 'theory' to the name of your theme in all the template files.
-		*/
-	
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
-	add_theme_support( 'title-tag' );
-
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
-	
-
-
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'theory_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
-}
-add_action( 'after_setup_theme', 'theory_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
 function theory_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'theory_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'theory_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
