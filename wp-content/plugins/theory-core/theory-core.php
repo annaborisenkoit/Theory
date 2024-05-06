@@ -4,7 +4,7 @@
 Plugin Name: Theory Core
 Plugin URI: https://github.com/annaborisenkoit
 Description: A plugit that impliments Theory Functionality;
-Version: 1.1
+Version: 1.0
 Requires at least: 5.8
 Requires PHP: 5.6.20
 Author: annaborisenkoit
