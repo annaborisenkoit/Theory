@@ -23,20 +23,23 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!-- <?php
-
-	if(is_tax('brand', array('mersedes', 'bmw'))){
-		echo "Header for Brand page";
-	}else {
-		echo "Simple Header";
-	}
-?> -->
+<button id="button_car">Show All Cars</button>
+<div id="car_content" style="background: #f5f5f5; border:1px solid #000;"></div>
 
 <?php
 
-global $theory_options;
+	// if(is_tax('brand', array('mersedes', 'bmw'))){
+	// 	echo "Header for Brand page";
+	// }else {
+	// 	echo "Simple Header";
+	// }
+?> 
 
-echo $theory_options['logo'] ['url'];
+ <?php
+
+// global $theory_options;
+
+// echo $theory_options['logo'] ['url'];
 
 	
 	

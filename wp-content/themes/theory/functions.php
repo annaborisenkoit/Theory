@@ -112,7 +112,7 @@ function theo_enqueue_scripts(){
 	wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
 	wp_localize_script( 
 		'theo-ajax', 
-		'theo-ajax-script', 
+		'theo_ajax_script', 
 		array(
 			'ajaxurl' => admin_url('admin-ajax.php'),
 			'nonce' => wp_create_nonce('ajax-nonce'),
@@ -127,6 +127,39 @@ function theo_enqueue_scripts(){
 	
 }
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
+
+function theo_ajax_example(){
+
+	if(!wp_verify_nonce($_REQUEST['nonce'], 'ajax-nonce')){
+		die;
+	}
+
+	if(isset($_REQUEST['string_one'])){
+		echo $_REQUEST['string_one'];
+	}
+
+    echo "<br>";
+
+	if(isset($_REQUEST['string_two'])){
+		echo $_REQUEST['string_two'];
+	}
+
+	$cars = new WP_Query(array('post_type'=>'car', 'posts_per_page'=>-1));
+
+	if($cars->have_posts()) : while($cars->have_posts()) : $cars->the_post(); 
+
+    get_template_part('partials/content', 'car');  
+  
+	endwhile; endif; 
+    wp_reset_postdata();
+	
+	//в конце функции на аяксе всегда должно быть die:
+	die;
+
+}
+add_action('wp_ajax_theo_ajax_example', 'theo_ajax_example');
+//для неавторизированных:
+add_action('wp_ajax_nopriv_theo_ajax_example', 'theo_ajax_example');
 
 function theo_theme_init(){
 	//регистрация локаций меню:
