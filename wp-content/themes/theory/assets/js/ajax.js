@@ -1,8 +1,8 @@
 jQuery(document).ready(function($){
     $('#button_car').on('click', function(e){
-        e.preventDefault;
+        e.preventDefault();
 
-        $ajax({
+        $.ajax({
             url:theo_ajax_script.ajaxurl,
             data: {
                 'action' : 'theo_ajax_example',
