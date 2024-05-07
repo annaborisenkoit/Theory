@@ -109,6 +109,18 @@ function theo_enqueue_scripts(){
     wp_enqueue_script('theo-script', get_template_directory_uri().'/assets/js/script.js', array('jquery'), '1.0', true);
 	//4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
 
+	wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
+	wp_localize_script( 
+		'theo-ajax', 
+		'theo-ajax-script', 
+		array(
+			'ajaxurl' => admin_url('admin-ajax.php'),
+			'nonce' => wp_create_nonce('ajax-nonce'),
+			'string_box' => esc_html__('Hello', 'theory'),
+			'string_new' => esc_html__('Hello World', 'theory'),
+		) 
+	);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
