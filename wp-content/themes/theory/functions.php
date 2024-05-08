@@ -151,7 +151,8 @@ function theo_ajax_example(){
     get_template_part('partials/content', 'car');  
   
 	endwhile; endif; 
-    wp_reset_postdata();
+
+wp_reset_postdata();
 	
 	//в конце функции на аяксе всегда должно быть die:
 	die;

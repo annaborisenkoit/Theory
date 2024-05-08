@@ -11,7 +11,12 @@ jQuery(document).ready(function($){
                 'string_two' : theo_ajax_script.string_new
             },
             success: function(data){
-                $('#car_content').append(data);
+                // Сохраняем текущее содержимое #car_content
+                var currentContent = $('#car_content').html();
+                // Если новый контент отличается от текущего, добавляем его
+                if (data !== currentContent) {
+                    $('#car_content').html(data);
+                }
             },
             error: function(errorThrown){
                 console.log(errorThrown);
