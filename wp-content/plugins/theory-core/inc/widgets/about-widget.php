@@ -106,6 +106,8 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		echo $settings['theo_title'];
+
+		echo $settings['image']['url'];
 		
 	}
 
