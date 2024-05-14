@@ -62,12 +62,31 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'theo_title',
+			[
+				'label' => esc_html__( 'Title', 'elementor-currency-control' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+			]
+		);
+
+		$this->add_control(
 			'url',
 			[
 				'label' => esc_html__( 'URL to embed', 'elementor-oembed-widget' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'url',
 				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-oembed-widget' ),
+			]
+		);
+
+		$this->add_control(
+			'image',
+			[
+				'label' => esc_html__( 'Choose Image', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
 			]
 		);
 
@@ -86,16 +105,8 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		if ( empty( $settings['url'] ) ) {
-			return;
-		}
-
-		$html = wp_oembed_get( $settings['url'] );
-		?>
-		<div class="oembed-elementor-widget">
-			<?php echo ( $html ) ? $html : $settings['url']; ?>
-		</div>
-		<?php
+		echo $settings['theo_title'];
+		
 	}
 
 }
