@@ -54,7 +54,7 @@ class VcTheoryAbout {
 
         $result = '';
         $result .= '<h2>'.$title.'</h2>';
-        $result .= 'div class="content_box">'.$content.'</div>';
+        $result .= '<div class="content_box">'.$content.'</div>';
 
         return $result;
     }
