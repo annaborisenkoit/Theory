@@ -237,7 +237,7 @@ function theory_custom_comments($comment, $args, $depth){
     } ?>
         <div class="comment-author vcard"><?php 
             if ( $args['avatar_size'] != 0 ) {
-                //echo get_avatar( $comment, $args['avatar_size'] ); 
+                echo get_avatar( $comment, $args['avatar_size'] ); 
             } 
             printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
         </div><?php 

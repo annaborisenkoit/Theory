@@ -54,7 +54,8 @@ if ( post_password_required() ) {
 				array(
 					'style'      => 'div',
 					'short_ping' => true,
-					'callback' => 'theory_custom_comments'
+					'avatar_size' => 100,
+					'callback' => 'theory_custom_comments',
 				)
 			);
 			?>
