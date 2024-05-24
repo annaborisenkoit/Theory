@@ -239,7 +239,7 @@ function theory_custom_comments($comment, $args, $depth){
             if ( $args['avatar_size'] != 0 ) {
                 echo get_avatar( $comment, $args['avatar_size'] ); 
             } 
-            printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+            printf( __( '<cite class="fn">Автор: %s</cite>' ), get_comment_author_link() ); ?>
 			
 			<div class="reply"><?php 
 					comment_reply_link( 
