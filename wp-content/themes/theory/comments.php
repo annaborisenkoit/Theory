@@ -52,10 +52,11 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'div',
+					'style'      => 'ol',
 					'short_ping' => true,
 					'avatar_size' => 100,
 					'callback' => 'theory_custom_comments',
+					'max_depth' => 3
 				)
 			);
 			?>
