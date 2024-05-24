@@ -223,3 +223,9 @@ function theory_content_width() {
 add_action( 'after_setup_theme', 'theory_content_width', 0 );
 
 
+function theory_custom_comments(){
+	
+}
+
+
+
