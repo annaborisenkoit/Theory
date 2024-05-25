@@ -281,10 +281,10 @@ function theory_custom_comments($comment, $args, $depth){
 function theory_first_function(){
 	echo 'Дратути<br>';
 }
-add_action('theory_our_hook', 'theory_first_function');
+add_action('theory_our_hook', 'theory_first_function', 2);
 
 function theory_second_function(){
 	echo 'Дратути tekrar<br>';
 }
-add_action('theory_our_hook', 'theory_second_function');
+add_action('theory_our_hook', 'theory_second_function', 1);
 
