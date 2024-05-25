@@ -23,11 +23,15 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<button id="button_car">Show All Cars</button>
-<div id="car_content" style="background: #f5f5f5; border:1px solid #000;"></div>
+<!-- <button id="button_car">Show All Cars</button>
+<div id="car_content" style="background: #f5f5f5; border:1px solid #000;"></div> -->
 
 <?php 
-do_action('theory_our_hook');
+//do_action('theory_our_hook');
+$name = 'Alex';
+$name = apply_filters('theory_first_filter', $name);
+
+echo $name;
 
 
 

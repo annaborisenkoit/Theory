@@ -278,13 +278,19 @@ function theory_custom_comments($comment, $args, $depth){
     endif;
 }
 
-function theory_first_function(){
-	echo 'Дратути<br>';
-}
-add_action('theory_our_hook', 'theory_first_function', 2);
+// function theory_first_function(){
+// 	echo 'Дратути<br>';
+// }
+// add_action('theory_our_hook', 'theory_first_function', 2);
 
-function theory_second_function(){
-	echo 'Дратути tekrar<br>';
-}
-add_action('theory_our_hook', 'theory_second_function', 1);
+// function theory_second_function(){
+// 	echo 'Дратути tekrar<br>';
+// }
+// add_action('theory_our_hook', 'theory_second_function', 1);
 
+function theo_first_filter($name){
+	$name = 'Bill';
+	$name = 'My name isss: '.$name;
+	return $name;
+}
+add_filter('theory_first_filter', 'theo_first_filter');
