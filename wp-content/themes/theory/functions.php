@@ -278,6 +278,13 @@ function theory_custom_comments($comment, $args, $depth){
     endif;
 }
 
+function theory_first_function(){
+	echo 'Дратути<br>';
+}
+add_action('theory_our_hook', 'theory_first_function');
 
-
+function theory_second_function(){
+	echo 'Дратути tekrar<br>';
+}
+add_action('theory_our_hook', 'theory_second_function');
 

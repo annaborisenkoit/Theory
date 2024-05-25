@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form(array('label_submit' => 'Вася'));
+	comment_form(array('label_submit' => 'Отправить'));
 	?>
 
 </div><!-- #comments -->
