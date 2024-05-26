@@ -294,3 +294,5 @@ function theo_first_filter($name){
 	return $name;
 }
 add_filter('theory_first_filter', 'theo_first_filter');
+
+remove_filter('theory_first_filter', 'theo_first_filter');
