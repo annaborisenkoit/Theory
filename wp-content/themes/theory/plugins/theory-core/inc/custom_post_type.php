@@ -101,3 +101,9 @@ register_post_type('car', $args);
 
 }
 add_action('init', 'theory_register_post_type');
+
+function theory_rewrite_rules(){
+	theory_register_post_type();
+	flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'theory_rewrite_rules');

@@ -211,12 +211,6 @@ function theo_theme_init(){
 }
 add_action('after_setup_theme', 'theo_theme_init', 0);
 
-function theory_rewrite_rules(){
-	theory_register_post_type();
-	flush_rewrite_rules();
-}
-add_action('after_switch_theme', 'theory_rewrite_rules');
-
 function theory_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'theory_content_width', 640 );
 }
@@ -296,3 +290,4 @@ function theo_first_filter($name){
 add_filter('theory_first_filter', 'theo_first_filter');
 
 remove_filter('theory_first_filter', 'theo_first_filter');
+remove_action('init', 'theory_register_post_type');
