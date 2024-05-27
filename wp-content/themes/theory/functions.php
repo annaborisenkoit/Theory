@@ -104,17 +104,20 @@ add_action( 'widgets_init', 'theory_widgets_init' );
 
 function theo_enqueue_scripts(){
 	//если надо и зарегистрировать и вывести скрипты и стили:	
-	wp_enqueue_style('theo-general', get_template_directory_uri().'/assets/css/general.css', array(), '1.0', 'all');
-
+	//wp_enqueue_style('theo-general', get_template_directory_uri().'/assets/css/general.css', array(), '1.0', 'all');
+	
     // wp_enqueue_script('theo-script', get_template_directory_uri().'/assets/js/script.js', array('jquery'), '1.0', true);
 	// //4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
 
 	// wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
 
+	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('owl.carousel', get_template_directory_uri().'/assets/js/lib/owlcarousel/assets/owl.carousel.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('tempusdominus-bootstrap-4', get_template_directory_uri().'/assets/js/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('theo-bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('theo-style', get_template_directory_uri().'/assets/css/style.css', array(), '1.0', 'all');
 
 	wp_enqueue_script('bootstrap.bundle', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array('jquery'), '1.0', true);
-	//4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
-
 	wp_enqueue_script('easing', get_template_directory_uri().'/assets/js/lib/easing/easing.min.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('waypoints', get_template_directory_uri().'/assets/js/lib/waypoints/waypoints.min.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('owl.carousel', get_template_directory_uri().'/assets/js/lib/owlcarousel/owl.carousel.min.js', array('jquery'), '1.0', true);
