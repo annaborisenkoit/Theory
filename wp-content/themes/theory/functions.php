@@ -106,10 +106,25 @@ function theo_enqueue_scripts(){
 	//если надо и зарегистрировать и вывести скрипты и стили:	
 	wp_enqueue_style('theo-general', get_template_directory_uri().'/assets/css/general.css', array(), '1.0', 'all');
 
-    wp_enqueue_script('theo-script', get_template_directory_uri().'/assets/js/script.js', array('jquery'), '1.0', true);
+    // wp_enqueue_script('theo-script', get_template_directory_uri().'/assets/js/script.js', array('jquery'), '1.0', true);
+	// //4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
+
+	// wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
+
+
+	wp_enqueue_script('bootstrap.bundle', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array('jquery'), '1.0', true);
 	//4-й параметр в скриптах true - чтобы скрипт ушел в подвал (если они для динамики, например, анимации, а не действуют на контент)
 
-	wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('easing', get_template_directory_uri().'/assets/js/lib/easing/easing.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('waypoints', get_template_directory_uri().'/assets/js/lib/waypoints/waypoints.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('owl.carousel', get_template_directory_uri().'/assets/js/lib/owlcarousel/owl.carousel.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('moment', get_template_directory_uri().'/assets/js/lib/tempusdominus/js/moment.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('moment-timezone', get_template_directory_uri().'/assets/js/lib/tempusdominus/js/moment-timezone.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('tempusdominus-bootstrap-4', get_template_directory_uri().'/assets/js/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('theo-main', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '1.0', true);
+
+
+
 	wp_localize_script( 
 		'theo-ajax', 
 		'theo_ajax_script', 
@@ -290,4 +305,4 @@ function theo_first_filter($name){
 add_filter('theory_first_filter', 'theo_first_filter');
 
 remove_filter('theory_first_filter', 'theo_first_filter');
-remove_action('init', 'theory_register_post_type');
+//remove_action('init', 'theory_register_post_type');
