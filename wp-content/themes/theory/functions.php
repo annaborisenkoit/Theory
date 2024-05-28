@@ -128,16 +128,16 @@ function theo_enqueue_scripts(){
 
 
 
-	wp_localize_script( 
-		'theo-ajax', 
-		'theo_ajax_script', 
-		array(
-			'ajaxurl' => admin_url('admin-ajax.php'),
-			'nonce' => wp_create_nonce('ajax-nonce'),
-			'string_box' => esc_html__('Hello', 'theory'),
-			'string_new' => esc_html__('Hello World', 'theory'),
-		) 
-	);
+	// wp_localize_script( 
+	// 	'theo-ajax', 
+	// 	'theo_ajax_script', 
+	// 	array(
+	// 		'ajaxurl' => admin_url('admin-ajax.php'),
+	// 		'nonce' => wp_create_nonce('ajax-nonce'),
+	// 		'string_box' => esc_html__('Hello', 'theory'),
+	// 		'string_new' => esc_html__('Hello World', 'theory'),
+	// 	) 
+	// );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
