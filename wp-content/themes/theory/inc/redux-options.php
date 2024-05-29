@@ -313,10 +313,142 @@ Redux::set_section(
 			array(
 				'id'       => 'phone',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Text Field', 'your-textdomain-here' ),
-				'subtitle' => esc_html__( 'Subtitle', 'your-textdomain-here' ),
-				'desc'     => esc_html__( 'Field Description', 'your-textdomain-here' ),
-				'default'  => 'Default Text',
+				'title'    => esc_html__( 'Phone Number', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert phone', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Phone', 'your-textdomain-here' ),
+				'default'  => '',
+			),
+			array(
+				'id'       => 'email',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Site Email', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert Email', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Email', 'your-textdomain-here' ),
+				'default'  => '',
+			),
+		)
+	)
+);
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Social Settings', 'your-textdomain-here' ),
+		'id'               => 'site_settings_social',
+		'subsection'       => true,
+		'desc'             => esc_html__( 'Social links', 'your-textdomain-here' ),
+		'customizer_width' => '450px',
+		'fields'           => array(
+			array(
+				'id'       => 'fb',
+				'type'     => 'text',
+				'title'    => esc_html__( 'FB Link', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert profile link', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Social link', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'x',
+				'type'     => 'text',
+				'title'    => esc_html__( 'X Link', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert profile link', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Social link', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'in',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Linkedin Link', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert profile link', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Social link', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'ins',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Instagram Link', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert profile link', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Social link', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'yout',
+				'type'     => 'text',
+				'title'    => esc_html__( 'YouTube Link', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert profile link', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Social link', 'your-textdomain-here' ),
+			),
+		)
+	)
+);
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Footer Settings', 'your-textdomain-here' ),
+		'id'               => 'site_settings_footer',
+		'subsection'       => true,
+		'desc'             => esc_html__( 'Settings for footer', 'your-textdomain-here' ),
+		'customizer_width' => '450px',
+		'fields'           => array(
+			array(
+				'id'       => 'title_one',
+				'type'     => 'text',
+				'title'    => esc_html__( 'GET IN TOUCH Title', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert the title', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'GET IN TOUCH', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'title_two',
+				'type'     => 'text',
+				'title'    => esc_html__( 'USEFUL LINKS Title', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert the title', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'USEFUL LINKS', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'title_three',
+				'type'     => 'text',
+				'title'    => esc_html__( 'CAR GALLERY Title', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert the title', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'CAR GALLERY', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'title_four',
+				'type'     => 'text',
+				'title'    => esc_html__( 'ABOUT', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert the title', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'ABOUT', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'address',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Address', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert the address', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Address', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'phonefooter',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Phone Number', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert phone', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Phone', 'your-textdomain-here' ),
+				'default'  => '',
+			),
+			array(
+				'id'       => 'emailfooter',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Site Email', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert email', 'your-textdomain-here' ),
+				'desc'     => esc_html__( 'Email', 'your-textdomain-here' ),
+				'default'  => '',
+			),
+			array(
+				'id'       => 'ABOUT_FOOTER',
+				'type'     => 'editor',
+				'title'    => esc_html__( 'About Section', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert some text', 'your-textdomain-here' ),
+			),
+			array(
+				'id'       => 'copyrights',
+				'type'     => 'editor',
+				'title'    => esc_html__( 'Copyrights', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Insert Copyrights', 'your-textdomain-here' ),
 			),
 		)
 	)

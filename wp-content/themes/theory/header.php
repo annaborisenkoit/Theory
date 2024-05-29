@@ -23,11 +23,13 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<? global $theory_options; ?>
+
 	<div class="container-fluid bg-dark py-3 px-lg-5 d-none d-lg-block">
         <div class="row">
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</a>
+                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i><?php echo esc_html($theory_options); ?></a>
                     <span class="text-body">|</span>
                     <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
                 </div>
