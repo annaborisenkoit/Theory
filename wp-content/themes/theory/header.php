@@ -29,28 +29,42 @@
         <div class="row">
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i><?php echo esc_html($theory_options); ?></a>
+					<?php if ($theory_options['phone']){?>
+					<a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i><?php echo esc_html($theory_options['phone']); ?></a>
                     <span class="text-body">|</span>
-                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
+					<?php } ?>
+					<?php if ($theory_options['email']){?>
+                    <a class="text-body px-3" href="mailto: <?php echo esc_html($theory_options['email']); ?>"><i class="fa fa-envelope mr-2"></i><?php echo esc_html($theory_options['email']); ?></a>
+					<?php } ?>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-body pl-3" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+					<?php if($theory_options['fb']){ ?>
+						<a class="text-body px-3" href="<?php echo esc_url($theory_options['fb']); ?>">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					<?php }	?>
+					<?php if($theory_options['x']){ ?>
+						<a class="text-body px-3" href="<?php echo esc_url($theory_options['x']); ?>">
+							<i class="fab fa-twitter"></i>
+						</a>
+					<?php }	?>
+					<?php if($theory_options['in']){ ?>
+						<a class="text-body px-3" href="<?php echo esc_url($theory_options['in']); ?>">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					<?php }	?>
+					<?php if($theory_options['ins']){ ?>
+						<a class="text-body px-3" href="<?php echo esc_url($theory_options['ins']); ?>">
+							<i class="fab fa-instagram"></i>
+						</a>
+					<?php }	?>
+					<?php if($theory_options['yout']){ ?>
+						<a class="text-body pl-3" href="<?php echo esc_url($theory_options['yout']); ?>">
+							<i class="fab fa-youtube"></i>
+						</a>
+					<?php }	?>
                 </div>
             </div>
         </div>
