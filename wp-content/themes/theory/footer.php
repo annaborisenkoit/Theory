@@ -19,11 +19,15 @@
                 <h4 class="text-uppercase text-light mb-4">Usefull Links</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <?php 
-                        wp_nav_menu(
+                        echo strip_tags(wp_nav_menu(
                             array(
-                                'theme_location' => 'footer_nav'
+                                'theme_location' => 'footer_nav',
+                                'container' => false,
+                                'echo' => false,
+                                'items_wrap' => '%3$s',
+                                'depth' => 0
                             )
-                        );
+                        ), '<a>');
                     ?>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Private Policy</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Term & Conditions</a>
