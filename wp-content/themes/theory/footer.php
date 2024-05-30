@@ -1,7 +1,9 @@
+<?php global $theory_options; ?>
+
 <div class="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Get In Touch</h4>
+                <?php if($theory_options['title_one']){ ?><h4 class="text-uppercase text-light mb-4"><?php echo esc_html($theory_options['title_one']); ?></h4><?php } ?>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-white mr-3"></i>123 Street, New York, USA</p>
                 <p class="mb-2"><i class="fa fa-phone-alt text-white mr-3"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope text-white mr-3"></i>info@example.com</p>
