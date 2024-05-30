@@ -18,6 +18,13 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-uppercase text-light mb-4">Usefull Links</h4>
                 <div class="d-flex flex-column justify-content-start">
+                    <?php 
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'footer_nav'
+                            )
+                        );
+                    ?>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Private Policy</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Term & Conditions</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>New Member Registration</a>
@@ -60,15 +67,6 @@
         <p class="mb-2 text-center text-body">&copy; Your Site Name. All Rights Reserved.</p>
         <p class="m-0 text-center text-body">Designed by Team Name</p>
     </div>
-
-<?php 
-	// wp_nav_menu(
-	// 	array(
-	// 		'theme_location' => 'footer_nav'
-
-	// 	)
-	// );
-?>
 
 <?php wp_footer(); ?>
 
