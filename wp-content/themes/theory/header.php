@@ -86,6 +86,9 @@
                         <li class="nav-item nav-link "><a href="service.html">Service</a></li>
                         <li class="nav-item nav-link "><a href="car.html">Cars</a></li>
                     </ul>
+					<?php wp_nav_menu(
+						array('theme_location' => 'header_nav'),
+					) ?>
                 </div>
             </nav>
         </div>
