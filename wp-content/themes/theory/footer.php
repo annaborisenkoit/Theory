@@ -68,8 +68,12 @@
         </div>
     </div>
     <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; Your Site Name. All Rights Reserved.</p>
-        <p class="m-0 text-center text-body">Designed by Team Name</p>
+        <?php if($theory_options['copyrights']){
+            echo wp_kses_post($theory_options);
+        } else { ?>
+            <p class="mb-2 text-center text-body">&copy; <?php esc_html_e('Your Site Name. All Rights Reserved', 'theory'); ?> </p>
+            <p class="m-0 text-center text-body"><?php esc_html_e('Designed by Team Name', 'theory'); ?></p>
+        <?php } ?>
     </div>
 
 <?php wp_footer(); ?>
