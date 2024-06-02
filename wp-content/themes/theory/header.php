@@ -87,8 +87,12 @@
                         <li class="nav-item nav-link "><a href="car.html">Cars</a></li>
                     </ul>
 					<?php wp_nav_menu(
-						array('theme_location' => 'header_nav'),
-					) ?>
+						array('theme_location' => 'header_nav', 
+						'menu_class'=>'navbar-nav ml-auto py-0', 
+						'container' => '',
+						'add_li_class' => 'nav-item nav-link'
+						),
+					); ?>
                 </div>
             </nav>
         </div>

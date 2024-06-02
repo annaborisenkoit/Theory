@@ -290,6 +290,14 @@ function theory_custom_comments($comment, $args, $depth){
     endif;
 }
 
+function theo_add_class_on_li($classes, $item, $args){
+	if(isset($args->add_li_class)){
+		$classes[] =$args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class','theo_add_class_on_li',1,3);
+
 // function theory_first_function(){
 // 	echo 'Дратути<br>';
 // }
@@ -300,12 +308,12 @@ function theory_custom_comments($comment, $args, $depth){
 // }
 // add_action('theory_our_hook', 'theory_second_function', 1);
 
-function theo_first_filter($name){
-	$name = 'Bill';
-	$name = 'My name isss: '.$name;
-	return $name;
-}
-add_filter('theory_first_filter', 'theo_first_filter');
+// function theo_first_filter($name){
+// 	$name = 'Bill';
+// 	$name = 'My name isss: '.$name;
+// 	return $name;
+// }
+// add_filter('theory_first_filter', 'theo_first_filter');
 
-remove_filter('theory_first_filter', 'theo_first_filter');
-//remove_action('init', 'theory_register_post_type');
+// remove_filter('theory_first_filter', 'theo_first_filter');
+// //remove_action('init', 'theory_register_post_type');
