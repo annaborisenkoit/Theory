@@ -73,19 +73,14 @@
 	<div class="container-fluid position-relative nav-bar p-0">
         <div class="position-relative px-lg-5" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-uppercase text-primary mb-1">Royal Cars</h1>
+                <a href="<?php echo esc_url(home_url("/")); ?>" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1"><?php bloginfo('name'); ?></h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto py-0">
-                        <li class="nav-item nav-link active"><a href="index.html">Home</a></li>
-                        <li class="nav-item nav-link "><a href="about.html">About</a></li>
-                        <li class="nav-item nav-link "><a href="service.html">Service</a></li>
-                        <li class="nav-item nav-link "><a href="car.html">Cars</a></li>
-                    </ul>
+                    
 					<?php wp_nav_menu(
 						array('theme_location' => 'header_nav', 
 						'menu_class'=>'navbar-nav ml-auto py-0', 
