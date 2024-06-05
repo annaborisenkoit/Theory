@@ -79,8 +79,7 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">                    
 					<?php wp_nav_menu(
 						array('theme_location' => 'header_nav', 
 						'menu_class'=>'navbar-nav ml-auto py-0', 
@@ -92,6 +91,14 @@
             </nav>
         </div>
     </div>
+	<!--Navbar End -->
+
+	<?php if(!is_front_page()){ ?>
+		<div class="container-fluid page-header">
+        	<h1 class="display-3 text-uppercase text-white mb-3">About</h1>
+    	</div>
+	<?php  } ?>
+
 
 
 
