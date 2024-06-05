@@ -95,7 +95,7 @@
 
 	<?php if(!is_front_page()){ ?>
 		<div class="container-fluid page-header">
-        	<h1 class="display-3 text-uppercase text-white mb-3">About</h1>
+        	<h1 class="display-3 text-uppercase text-white mb-3"><?php wp_title(""); ?></h1>
     	</div>
 	<?php  } ?>
 
