@@ -326,6 +326,11 @@ Redux::set_section(
 				'desc'     => esc_html__( 'Email', 'your-textdomain-here' ),
 				'default'  => '',
 			),
+			array(
+				'id'       => 'heading_image',
+				'type'     => 'media',
+				'title'    => __( 'Heading image', 'your-textdomain-here' ),
+			),
 		)
 	)
 );
