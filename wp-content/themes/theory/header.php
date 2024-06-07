@@ -95,8 +95,11 @@
 <!-- Navbar End -->
 
 <?php if (!is_front_page()) { 
+
     $bg_image = '';
-    if (isset($theory_options['heading_image']['url']) && $theory_options['heading_image']['url']) {
+    if(get_the_post_thumbnail_url(get_the_id(), 'full')){
+        $bg_image = 'style="background-image:linear-gradient(rgba(28, 30, 50, .9), rgba(28, 30, 50, .9)),url(' . get_the_post_thumbnail_url(get_the_id(), 'full') . ')"';
+	} else if (isset($theory_options['heading_image']['url']) && $theory_options['heading_image']['url']) {
         $bg_image = 'style="background-image:linear-gradient(rgba(28, 30, 50, .9), rgba(28, 30, 50, .9)),url(' . esc_url($theory_options['heading_image']['url']) . ')"';
     }
     ?>
