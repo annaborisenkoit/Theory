@@ -111,7 +111,7 @@ function theo_enqueue_scripts(){
 
 	// wp_enqueue_script('theo-ajax', get_template_directory_uri().'/assets/js/ajax.js', array('jquery'), '1.0', true);
 
-	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('theo-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css', array(), '1.0', 'all');
 	wp_enqueue_style('owl.carousel', get_template_directory_uri().'/assets/js/lib/owlcarousel/assets/owl.carousel.min.css', array(), '1.0', 'all');
 	wp_enqueue_style('tempusdominus-bootstrap-4', get_template_directory_uri().'/assets/js/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', array(), '1.0', 'all');
 	wp_enqueue_style('theo-bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), '1.0', 'all');
