@@ -126,7 +126,7 @@ function theo_enqueue_scripts(){
 	wp_enqueue_script('tempusdominus-bootstrap-4', get_template_directory_uri().'/assets/js/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('theo-main', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '1.0', true);
 
-
+	wp_enqueue_style('theo-fonts', theo_fonts_url(), array(), '1.0');
 
 	// wp_localize_script( 
 	// 	'theo-ajax', 
@@ -145,6 +145,19 @@ function theo_enqueue_scripts(){
 	
 }
 add_action('wp_enqueue_scripts', 'theo_enqueue_scripts');
+
+function theo_fonts_url(){
+	$fonts_url = '';
+	$families = array();
+	$families[] = 'Oswald:wght@400;500;600;700';
+	$families[] = 'Rubik';
+
+	$query_args = array(
+		'family' => urlencode(implode('|', $families)),
+	);
+	$fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
+	return esc_url_raw($fonts_url);
+}
 
 function theo_ajax_example(){
 
