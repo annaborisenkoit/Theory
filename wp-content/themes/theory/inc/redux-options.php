@@ -331,6 +331,32 @@ Redux::set_section(
 				'type'     => 'media',
 				'title'    => __( 'Heading image', 'your-textdomain-here' ),
 			),
+			array(
+				'id'          => 'typography',
+				'type'        => 'typography',
+				'title'       => esc_html__( 'Typography Site Description', 'your-textdomain-here' ),
+
+				// Use if you want to hook in your own CSS compiler.
+				'compiler'    => array('font_one-compiler'),
+
+				// Select a backup non-google font in addition to a Google font.
+				'font-backup' => true,
+
+				// Enable all Google Font style/weight variations to be added to the page.
+				'all-styles'  => true,
+				'all-subsets' => true,
+				'units'       => 'px',
+				'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'your-textdomain-here' ),
+				'default'     => array(
+					'color'       => '#333',
+					'font-style'  => '700',
+					'font-family' => 'RUbik',
+					'google'      => true,
+					'font-size'   => '33px',
+					'line-height' => '40px',
+				),
+				'output'      => array('.font-one'),
+			),
 		)
 	)
 );
