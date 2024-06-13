@@ -1,27 +1,12 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Theory
- */
+<?php get_header(); ?>
 
-get_header();
-?>
-<!-- wwwwwwwwwwwwwwwwwwwwww -->
-	<main id="primary" class="site-main">
-
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			the_title();
+			?><h1 class="display-4 text-uppercase text-center mb-5"><?php the_title();?></h1><?
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -30,8 +15,8 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
-	</main><!-- #main -->
+	</div>
+</div>
 
 <?php
 //get_sidebar();
