@@ -6,9 +6,7 @@
 		while ( have_posts() ) :
 			the_post();
 
-			?><h1 class="display-4 text-uppercase text-center mb-5"><?php the_title();?></h1><?
-
-			the_content();
+			get_template_part('partials/content', 'page'); 
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
