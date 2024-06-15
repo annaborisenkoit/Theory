@@ -1,30 +1,24 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Theory
- */
 
 get_header();
 ?>
 
-	
-	<div>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
 
-<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-	<?php get_template_part('partials/content'); ?> 
+		<?php get_template_part('partials/content'); ?> 
 
-<?php endwhile; else : ?>
+	<?php endwhile; else : ?>
 
-	<?php get_template_part('partials/content', 'none'); ?> 
+		<?php get_template_part('partials/content', 'none'); ?> 
 
-<?php endif; ?>
+	<?php endif; ?>
 
 	</div>
+</div>
 
 <?php
-get_sidebar();
+
 get_footer();

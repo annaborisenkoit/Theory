@@ -10,10 +10,6 @@ class VcTheoryAbout {
     public function create_shortcode(){
         //:admin fields for WPBakery
 
-        if (!defined('WPB_VC_VERSION')){
-            return;
-        }
-
         if (function_exists('vc_map')){
             vc_map(array(
                 'name' => esc_html__("TH About"),
