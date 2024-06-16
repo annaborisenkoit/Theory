@@ -10,7 +10,11 @@ get_header();
 
 		<?php get_template_part('partials/content'); ?> 
 
-	<?php endwhile; else : ?>
+	<?php endwhile; ?>
+		<div class="pagination">
+			<?php echo paginate_links(); ?>
+		</div>
+	<?php else : ?>
 
 		<?php get_template_part('partials/content', 'none'); ?> 
 
