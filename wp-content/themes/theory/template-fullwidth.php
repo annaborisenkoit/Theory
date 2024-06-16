@@ -1,60 +1,20 @@
 <?php
 /**
- * Template name: Full Width
+ * Template name: Full Width TEmplate
  */
 get_header();
-?>
 
-    <div class="cars">
+    while ( have_posts() ) :
+        the_post();
 
-        <?php
-        $paged = (get_query_var('page')) ? get_query_var('page') : 1; 
-        $args = array(            
-            'post_type' => 'car',
-            'paged' => $paged,
-            'posts_per_page' => 2
-        );
-        $cars = new WP_Query($args); ?>
+        get_template_part('partials/content', 'page'); 
 
-        <?php if($cars->have_posts()) : while($cars->have_posts()) : $cars->the_post(); ?>
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
 
-            <?php get_template_part('partials/content', 'car'); ?> 
+    endwhile; // End of the loop.
 
-        <?php endwhile; theory_paginate($cars);  else : ?>
-
-            <?php get_template_part('partials/content', 'none'); ?> 
-
-        <?php endif; 
-        
-        wp_reset_postdata();
-        ?>
-
-        <hr>
-
-        <?php
-        unset($args);
-        $args = array(
-            
-            'post_type' => 'post',            
-            'posts_per_page' => -1
-        );
-        $blogpost = new WP_Query($args); ?>
-
-        <?php if($blogpost->have_posts()) : while($blogpost->have_posts()) : $blogpost->the_post(); ?>
-
-            <?php get_template_part('partials/content'); ?> 
-
-        <?php endwhile; else : ?>
-
-            <?php get_template_part('partials/content', 'none'); ?> 
-
-        <?php endif; 
-        
-        wp_reset_postdata();
-        ?>
-
-    </div>
-
-<?php
 //get_sidebar();
 get_footer();
