@@ -1,27 +1,28 @@
-<?php get_header(); ?>
+<?php
 
-	<div>
+get_header();
+?>
 
-		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
 
-			<?php get_template_part('partials/content'); ?> 
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-		<?php endwhile; 
-		
-		?>
-			<div class="pagination">
-				<?php echo paginate_links(); ?>
-			</div>
-		<?php
-		
-		else : ?>
+		<?php get_template_part('partials/content'); ?> 
 
-			<?php get_template_part('partials/content', 'none'); ?> 
+	<?php endwhile; ?>
+		<div class="pagination">
+			<?php echo paginate_links(); ?>
+		</div>
+	<?php else : ?>
 
-		<?php endif; ?>
+		<?php get_template_part('partials/content', 'none'); ?> 
+
+	<?php endif; ?>
 
 	</div>
+</div>
 
 <?php
-//get_sidebar();
+
 get_footer();
