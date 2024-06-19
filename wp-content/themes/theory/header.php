@@ -105,7 +105,10 @@
     ?>
     <div class="container-fluid page-header" <?php echo $bg_image; ?>>
         <h1 class="display-3 text-uppercase text-white mb-3"><?php 
-        if(is_date()){
+        if (is_search()){
+            printf( esc_html__( 'Search Resultsssssss for: %s', 'theory' ), '<span>' . get_search_query() . '</span>' );
+        }
+        else if(is_date()){
             the_archive_title( '', '' );
         } else {
             wp_title('');
