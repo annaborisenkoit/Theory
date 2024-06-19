@@ -10,13 +10,13 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'partials/content', get_post_type() );
+			get_template_part('partials/content', 'page'); 
 
 			the_post_navigation(
 				array(
@@ -32,14 +32,8 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
-	</main><!-- #main -->
+	</div>
+</div>
 
 <?php
-	if(is_singular('car')){
-		get_sidebar('cars');
-	} else {
-		get_sidebar();
-	}
-
 get_footer();
