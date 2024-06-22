@@ -3,18 +3,14 @@
 class VcTheoryAbout {
 
     function __construct(){
-        add_action('init', array($this, 'create_shortcode'),1000);
+        add_action('init', array($this, 'create_shortcode'), 1000);
         add_shortcode('theory_about_shortcode', array($this, 'render_shortcode'));
     }
 
     public function create_shortcode(){
-        //:admin fielfs for WPBakery
+        //:admin fields for WPBakery
 
-        if(!defined('WPB_VC_VERSION')){
-            return;
-        }
-
-        if(function_exists('vc_map')){
+        if (function_exists('vc_map')){
             vc_map(array(
                 'name' => esc_html__("TH About"),
                 'base' => 'theory_about_shortcode',
@@ -38,25 +34,30 @@ class VcTheoryAbout {
                 )
             ));
         }
-        
     }
 
-    public function render_shortcode($atts, $content,$tag){
-        //Shortcode Front
+    public function render_shortcode($atts, $content, $tag){
+        // Вывод шорткода
 
-        $atts = (shortcode_atts(array(
+        $atts = shortcode_atts(array(
             'text' => '',
-        ),
-        $atts));
+        ), $atts);
 
         $title = esc_html__($atts['text']);
-        $content = wpb_js_remove_wpautop($content,true);
+        
+        // Проверка существования функции wpb_js_remove_wpautop
+        if (function_exists('wpb_js_remove_wpautop')) {
+            $content = wpb_js_remove_wpautop($content, true);
+        } else {
+            $content = wpautop($content); // Альтернатива wpautop, если wpb_js_remove_wpautop не существует
+        }
 
         $result = '';
-        $result .= '<h2>'.$title.'</h2>';
-        $result .= '<div class="content_box">'.$content.'</div>';
+        $result .= '<h2>' . $title . '</h2>';
+        $result .= '<div class="content_box">' . $content . '</div>';
 
         return $result;
     }
 }
+
 new VcTheoryAbout();

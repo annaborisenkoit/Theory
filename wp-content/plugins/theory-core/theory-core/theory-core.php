@@ -24,6 +24,9 @@ require plugin_dir_path( __FILE__ ) . '/inc/metaboxes.php';
 require plugin_dir_path( __FILE__ ) . '/inc/acf.php';
 require plugin_dir_path( __FILE__ ) . '/inc/custom_post_type.php';
 require plugin_dir_path( __FILE__ ) . '/inc/elementor.php';
-require plugin_dir_path( __FILE__ ) . '/inc/wpbakery.php';
 require plugin_dir_path( __FILE__ ) . '/inc/gutenberg.php';
 
+
+if (defined('WPB_VC_VERSION')){
+	require plugin_dir_path( __FILE__ ) . '/inc/wpbakery.php';
+}
