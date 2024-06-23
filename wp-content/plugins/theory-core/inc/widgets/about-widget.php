@@ -36,20 +36,22 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'theo_title',
+			'theo_title_one',
 			[
 				'label' => esc_html__( 'Title', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => 'Welcome To ',
+				'placeholder' => __('Type your title', 'plugin-domain'),
 			]
 		);
 
 		$this->add_control(
-			'url',
+			'theo_title_two',
 			[
-				'label' => esc_html__( 'URL to embed', 'elementor-oembed-widget' ),
+				'label' => esc_html__( 'Title Two', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'input_type' => 'url',
-				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-oembed-widget' ),
+				'default' => 'Royal Cars',
+				'placeholder' => __('Type your title', 'plugin-domain'),
 			]
 		);
 
@@ -64,6 +66,18 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'theo_description',
+			[
+				'label' => esc_html__( 'Title Two', 'elementor-currency-control' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'rows' => 10,
+				'placeholder' => __('Type your title', 'plugin-domain'),
+				'default' => '111Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.',
+			]
+		);
+		
+
 		$this->end_controls_section();
 
 	}
@@ -75,11 +89,11 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 
 		//echo $settings['image']['url'];
 	?>
-	            <h1 class="display-4 text-uppercase text-center mb-5">Welcome To <span class="text-primary">Royal Cars</span></h1>
+	            <h1 class="display-4 text-uppercase text-center mb-5"><?php echo esc_html($settings['theo_title_one']); ?><span class="text-primary"><?php echo esc_html($settings['theo_title_two']); ?></span></h1>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <img class="w-75 mb-4" src="img/about.png" alt="">
-                    <p>Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.</p>
+                    <?php  if($settings['image']['url']) {?><img class="w-75 mb-4" src="<?php echo esc_url($settings['image']['url']); ?>" alt=""><?php } ?>
+                    <p><?php echo esc_html($settings['theo_description']); ?></p>
                 </div>
             </div>
             <div class="row mt-3">
