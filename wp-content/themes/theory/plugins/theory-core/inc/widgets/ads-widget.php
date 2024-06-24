@@ -36,29 +36,40 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'theo_title_one',
+			'theo_title_left',
 			[
-				'label' => esc_html__( 'Title', 'elementor-currency-control' ),
+				'label' => esc_html__( 'Title Left', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'Welcome To ',
+				'default' => 'Want to be driver?',
 				'placeholder' => __('Type your title', 'plugin-domain'),
 			]
 		);
 
 		$this->add_control(
-			'theo_title_two',
+			'theo_title_right',
 			[
-				'label' => esc_html__( 'Title Two', 'elementor-currency-control' ),
+				'label' => esc_html__( 'Title Right', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => 'Royal Cars',
+				'default' => 'Looking for a car?',
 				'placeholder' => __('Type your title', 'plugin-domain'),
 			]
 		);
 
 		$this->add_control(
-			'image',
+			'image-left',
 			[
-				'label' => esc_html__( 'Choose Image', 'textdomain' ),
+				'label' => esc_html__( 'Choose Image Left', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+        $this->add_control(
+			'image-right',
+			[
+				'label' => esc_html__( 'Choose Image Right', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -67,13 +78,24 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'theo_description',
+			'theo_description_left',
 			[
-				'label' => esc_html__( 'Title Two', 'elementor-currency-control' ),
+				'label' => esc_html__( 'Descriptiion Left', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'rows' => 10,
 				'placeholder' => __('Type your title', 'plugin-domain'),
-				'default' => '111Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.',
+				'default' => 'Lorem justo sit sit ipsum eos lorem kasd, kasd labore',
+			]
+		);
+
+        $this->add_control(
+			'theo_description_right',
+			[
+				'label' => esc_html__( 'Descriptiion Rightt', 'elementor-currency-control' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'rows' => 10,
+				'placeholder' => __('Type your title', 'plugin-domain'),
+				'default' => 'Lorem justo sit sit ipsum eos lorem kasd, kasd labore',
 			]
 		);
 		
@@ -90,28 +112,28 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		//echo $settings['image']['url'];
 ?>
 
-            <div class="row mx-0">
-                <div class="col-lg-6 px-0">
-                    <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
-                        <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="img/banner-left.png" alt="">
-                        <div class="text-right">
-                            <h3 class="text-uppercase text-light mb-3">Want to be driver?</h3>
-                            <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                            <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 px-0">
-                    <div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
-                        <div class="text-left">
-                            <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
-                            <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                            <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
-                        </div>
-                        <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="img/banner-right.png" alt="">
-                    </div>
+    <div class="row mx-0">
+        <div class="col-lg-6 px-0">
+            <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
+                <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="img/banner-left.png" alt="">
+                <div class="text-right">
+                    <h3 class="text-uppercase text-light mb-3">Want to be driver?</h3>
+                    <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
+                    <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-6 px-0">
+            <div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
+                <div class="text-left">
+                    <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
+                    <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
+                    <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
+                </div>
+                <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="img/banner-right.png" alt="">
+            </div>
+        </div>
+    </div>
     
 <?php 
     
