@@ -104,10 +104,10 @@ final class Plugin {
 	public function init_widgets( $widgets_manager ) {
 
 		require_once( __DIR__ . '/widgets/about-widget.php' );
-       
-
+		require_once( __DIR__ . '/widgets/ads-widget.php' );
 
 		$widgets_manager->register_widget_type( new Elementor_About_Widget() );
+		$widgets_manager->register_widget_type( new Elementor_Ads_Widget() );
     }
 }
 
