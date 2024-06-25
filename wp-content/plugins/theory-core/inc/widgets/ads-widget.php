@@ -56,7 +56,7 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'image-left',
+			'theo_image_left',
 			[
 				'label' => esc_html__( 'Choose Image Left', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
@@ -67,7 +67,7 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		);
 
         $this->add_control(
-			'image-right',
+			'theo_image_right',
 			[
 				'label' => esc_html__( 'Choose Image Right', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
@@ -80,10 +80,10 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'theo_description_left',
 			[
-				'label' => esc_html__( 'Descriptiion Left', 'elementor-currency-control' ),
+				'label' => esc_html__( 'Description Left', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'rows' => 10,
-				'placeholder' => __('Type your title', 'plugin-domain'),
+				'placeholder' => __('Type your description', 'plugin-domain'),
 				'default' => 'Lorem justo sit sit ipsum eos lorem kasd, kasd labore',
 			]
 		);
@@ -91,14 +91,13 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
         $this->add_control(
 			'theo_description_right',
 			[
-				'label' => esc_html__( 'Descriptiion Rightt', 'elementor-currency-control' ),
+				'label' => esc_html__( 'Description Right', 'elementor-currency-control' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
 				'rows' => 10,
-				'placeholder' => __('Type your title', 'plugin-domain'),
+				'placeholder' => __('Type your description', 'plugin-domain'),
 				'default' => 'Lorem justo sit sit ipsum eos lorem kasd, kasd labore',
 			]
 		);
-		
 
 		$this->end_controls_section();
 
@@ -106,37 +105,32 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-
-		//echo $settings['theo_title'];
-
-		//echo $settings['image']['url'];
 ?>
 
     <div class="row mx-0">
         <div class="col-lg-6 px-0">
             <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
-                <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="img/banner-left.png" alt="">
+                <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="<?php echo esc_url($settings['theo_image_left']['url']); ?>" alt="">
                 <div class="text-right">
-                    <h3 class="text-uppercase text-light mb-3">Want to be driver?</h3>
-                    <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                    <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
+                    <?php if($settings['theo_title_left']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_left']); ?></h3><?php } ?>
+                    <p class="mb-4"><?php echo esc_html($settings['theo_description_left']); ?></p>
+                    <a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 px-0">
             <div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
                 <div class="text-left">
-                    <h3 class="text-uppercase text-light mb-3">Looking for a car?</h3>
-                    <p class="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
-                    <a class="btn btn-primary py-2 px-4" href="">Start Now</a>
+					<?php if($settings['theo_title_right']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_right']); ?></h3><?php } ?>
+                    <p class="mb-4"><?php echo esc_html($settings['theo_description_right']); ?></p>
+                    <a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
                 </div>
-                <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="img/banner-right.png" alt="">
+                <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="<?php echo esc_url($settings['theo_image_right']['url']); ?>" alt="">
             </div>
         </div>
     </div>
     
 <?php 
-    
     }
-
 }
+?>
