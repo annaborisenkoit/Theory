@@ -89,7 +89,10 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 
 		//echo $settings['image']['url'];
 	?>
-	            <h1 class="display-4 text-uppercase text-center mb-5"><?php echo esc_html($settings['theo_title_one']); ?><span class="text-primary"><?php echo esc_html($settings['theo_title_two']); ?></span></h1>
+	<div class="container-fluid py-5">
+        <div class="container py-5">
+
+	        <h1 class="display-4 text-uppercase text-center mb-5"><?php echo esc_html($settings['theo_title_one']); ?><span class="text-primary"><?php echo esc_html($settings['theo_title_two']); ?></span></h1>
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <?php  if($settings['image']['url']) {?><img class="w-75 mb-4" src="<?php echo esc_url($settings['image']['url']); ?>" alt=""><?php } ?>
@@ -122,6 +125,10 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
                     </div>
                 </div>
             </div>
+
+		</div>
+	</div>
+
 	<?php }
 
 }

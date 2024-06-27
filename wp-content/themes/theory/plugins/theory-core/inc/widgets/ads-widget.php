@@ -107,28 +107,34 @@ class Elementor_Ads_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 ?>
 
-    <div class="row mx-0">
-        <div class="col-lg-6 px-0">
-            <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
-                <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="<?php echo esc_url($settings['theo_image_left']['url']); ?>" alt="">
-                <div class="text-right">
-                    <?php if($settings['theo_title_left']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_left']); ?></h3><?php } ?>
-                    <p class="mb-4"><?php echo esc_html($settings['theo_description_left']); ?></p>
-                    <a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 px-0">
-            <div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
-                <div class="text-left">
-					<?php if($settings['theo_title_right']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_right']); ?></h3><?php } ?>
-                    <p class="mb-4"><?php echo esc_html($settings['theo_description_right']); ?></p>
-                    <a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
-                </div>
-                <img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="<?php echo esc_url($settings['theo_image_right']['url']); ?>" alt="">
-            </div>
-        </div>
-    </div>
+<div class="container-fluid py-5">
+	<div class="container py-5">
+
+		<div class="row mx-0">
+			<div class="col-lg-6 px-0">
+				<div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
+					<img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="<?php echo esc_url($settings['theo_image_left']['url']); ?>" alt="">
+					<div class="text-right">
+						<?php if($settings['theo_title_left']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_left']); ?></h3><?php } ?>
+						<p class="mb-4"><?php echo esc_html($settings['theo_description_left']); ?></p>
+						<a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 px-0">
+				<div class="px-5 bg-dark d-flex align-items-center justify-content-between" style="height: 350px;">
+					<div class="text-left">
+						<?php if($settings['theo_title_right']) { ?><h3 class="text-uppercase text-light mb-3"><?php echo esc_html($settings['theo_title_right']); ?></h3><?php } ?>
+						<p class="mb-4"><?php echo esc_html($settings['theo_description_right']); ?></p>
+						<a class="btn btn-primary py-2 px-4" href=""><?php echo esc_html__('Start Now', 'Theory'); ?></a>
+					</div>
+					<img class="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src="<?php echo esc_url($settings['theo_image_right']['url']); ?>" alt="">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
     
 <?php 
     }
