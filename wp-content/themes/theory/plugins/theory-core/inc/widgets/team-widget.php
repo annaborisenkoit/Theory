@@ -1,5 +1,12 @@
 <?php
 class Elementor_Team_Widget extends \Elementor\Widget_Base {
+    public function get_script_depends(){
+        if(\Elementor\Plugin::$instance->preview->is_preview_mode()){
+            wp_register_script('theo-team', plugins_url('/js/theo-team.js', __FILE__), ['elementor-frontend'], '1.0', true);
+            return ['theo-team'];
+        }
+        return [];
+    }
 
 	public function get_name() {
 		return 'theo_team';
