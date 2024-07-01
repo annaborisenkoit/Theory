@@ -1,27 +1,21 @@
-<article <?php post_class('custom_car_class'); ?> id="<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>">
-<?php 
-
-//has_post_thumbnail()
-//the_post_thumbnail()
-//get_post_thumbnail_id()
-//get_the_post_thumbnail()
-//set_post_thumbnail_size()
-
-if(has_post_thumbnail(get_the_ID())) {
-    the_post_thumbnail('car-cover');
-    echo get_the_post_thumbnail(get_the_ID(), array(100,100));
-}
-
-?>    
-<h1><?php the_title(); ?></h1>
-    <div><?php the_content(); ?></div>
-    <div>       
-        <?php 
-        
-        echo get_post_meta(get_the_ID(), 'custom_engine_type', true)
-        
-        ?>
-
+<div <?php post_class('col-lg-4 col-md-6 mb-2'); ?> id="<?php the_ID(); ?>" data-post-id="<?php the_ID(); ?>">
+    <div class="rent-item mb-4">
+        <img class="img-fluid mb-4" src="<?php echo get_the_post_thumbnail(get_the_ID(), 'large') ?>" alt="">
+        <h4 class="text-uppercase mb-4"><?php the_title(); ?></h4>
+        <div class="d-flex justify-content-center mb-4">
+            <div class="px-2">
+                <i class="fa fa-car text-primary mr-1"></i>
+                <span><?php echo get_post_meta(get_the_ID(), 'car_manufacture', true) ?></span>
+            </div>
+            <div class="px-2 border-left border-right">
+                <i class="fa fa-cogs text-primary mr-1"></i>
+                <span><?php echo get_post_meta(get_the_ID(), 'custom_engine_type', true) ?></span>
+            </div>
+            <div class="px-2">
+                <i class="fa fa-road text-primary mr-1"></i>
+                <span>25K</span>
+            </div>
+        </div>
+        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
     </div>
-    <a href="<?php the_permalink(); ?>">Read More</a>
-</article>
+</div>
