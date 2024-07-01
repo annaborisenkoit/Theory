@@ -313,8 +313,10 @@ function theo_add_class_on_li($classes, $item, $args){
 add_filter('nav_menu_css_class','theo_add_class_on_li',1,3);
 
 function theo_posts_per_page($query){
-	if(is_post_type_archive('car')){
-		$query->set('posts_per_page', 3);
+	if(!is_admin()){
+		if(is_post_type_archive('car')){
+			$query->set('posts_per_page', 3);
+		}
 	}
 }
 add_action('pre_get_posts', 'theo_posts_per_page');
