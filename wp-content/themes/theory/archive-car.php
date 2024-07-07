@@ -32,7 +32,9 @@ get_header();
 
 					<?php get_template_part('partials/content', 'none'); ?> 
 
-				<?php endif; ?>
+				<?php endif; 
+				wp_reset_postdata();
+				?>
 				
             </div>
         </div>
